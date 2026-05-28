@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="LogoK.ico">
-    <title>Kardiá | High-End Gothic Streetwear & Importação Exclusiva</title>
+    <link rel="icon" type="image/x-icon" href="LogoK.ico">
+    <title>Kardiá | High-End Streetwear & Importação Exclusiva</title>
     
     <!-- SEO Meta Tags -->
     <meta name="description" content="Kardiá - Importadora exclusiva de streetwear de luxo e underground. Sourcing especializado das marcas mais raras do mundo, inspirado na estética gothic e rock.">
-    <meta name="keywords" content="Kardiá, streetwear, importadora de roupas, Chrome Hearts, underground rap, streetwear de luxo, curadoria de roupas, roupas góticas, importação de roupas, streetwear brasil">
+    <meta name="keywords" content="Kardiá, streetwear, importadora de roupas, underground rap, streetwear de luxo, curadoria de roupas, roupas góticas, importação de roupas, streetwear brasil">
     <meta name="author" content="Kardiá">
-    <meta property="og:title" content="Kardiá | High-End Gothic Streetwear & Importação">
+    <meta property="og:title" content="Kardiá | High-End Streetwear & Importação">
     <meta property="og:description" content="Traga a pulsação do streetwear global de luxo para o seu peito. Curadoria exclusiva de peças raras e importação direta sem preocupações.">
     <meta property="og:type" content="website">
     
@@ -67,6 +67,11 @@
             background-position: 0 0, 16px 16px;
         }
 
+        /* Bloqueio de rolagem quando menu mobile está aberto */
+        body.menu-active {
+            overflow: hidden;
+        }
+
         /* Barra de rolagem gótica */
         ::-webkit-scrollbar {
             width: 8px;
@@ -96,6 +101,7 @@
             background: none;
             font-family: inherit;
             transition: var(--transition);
+            touch-action: manipulation; /* Otimização de clique em telas touch */
         }
 
         ul {
@@ -170,11 +176,11 @@
         }
 
         header.scrolled {
-            background: rgba(7, 7, 8, 0.85);
+            background: rgba(7, 7, 8, 0.9);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border-bottom: 1px solid rgba(158, 0, 24, 0.15);
-            padding: 12px 0;
+            padding: 8px 0;
         }
 
         header .nav-container {
@@ -307,7 +313,10 @@
         .mobile-menu-btn {
             display: none;
             color: var(--text-main);
-            font-size: 22px;
+            font-size: 24px;
+            padding: 10px;
+            background: transparent;
+            z-index: 1001;
         }
 
         /* ==========================================================================
@@ -323,7 +332,7 @@
             background: radial-gradient(circle at 50% 50%, rgba(158, 0, 24, 0.08) 0%, transparent 60%);
         }
 
-        /* Elementos de fundo metálicos/góticos */
+        /* Elementos de fundo */
         .hero-gothic-cross {
             position: absolute;
             font-size: 45vh;
@@ -352,7 +361,7 @@
         }
 
         .hero-badge {
-            background: rgba(158, 0, 24, 0.1);
+            background: rgba(158, 0, 24, 0.15);
             border: 1px solid rgba(158, 0, 24, 0.3);
             color: var(--primary-light);
             font-family: var(--font-street);
@@ -494,7 +503,6 @@
             font-size: 9px;
             letter-spacing: 3px;
             color: rgba(209, 209, 214, 0.25);
-            /* Efeito circular */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -521,13 +529,13 @@
             object-fit: cover;
             border-radius: 50%;
             border: 2px solid rgba(255, 255, 255, 0.05);
-            /* O FILTRO CRUCIAL: Transforma a rosa do papel em um emblema digital neon espetacular */
+            /* FILTRO DE CONVERSÃO PARA PRATEADO NEON */
             filter: invert(1) brightness(1.2) contrast(1.1) drop-shadow(0 0 25px rgba(158, 0, 24, 0.5));
             box-shadow: 0 0 50px rgba(0,0,0,0.9);
             z-index: 5;
             user-select: none;
             pointer-events: none;
-            transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+            transition: transform 0.1s ease-out;
             transform-style: preserve-3d;
         }
 
@@ -598,7 +606,6 @@
             color: var(--primary-light);
             width: 44px;
             height: 44px;
-            border-radius: 0;
             border: 1px solid rgba(158, 0, 24, 0.2);
             display: flex;
             justify-content: center;
@@ -683,7 +690,7 @@
         }
 
         /* ==========================================================================
-           5. SEÇÃO DE SERVIÇOS (PREÇOS SOB CONSULTA / EXCLUSIVOS)
+           5. SEÇÃO DE SERVIÇOS (PREÇOS SOB CONSULTA / EXCLUSIVO)
            ========================================================================== */
         .services {
             padding: 120px 0;
@@ -763,7 +770,7 @@
             font-weight: 300;
         }
 
-        /* Detalhes de Preço sob consulta (Estilo Chrome Hearts / Exclusivo) */
+        /* Detalhes sob consulta */
         .service-price-wrapper {
             border-top: 1px dashed rgba(255, 255, 255, 0.05);
             padding-top: 24px;
@@ -793,10 +800,10 @@
         .service-cta {
             margin-top: 20px;
             width: 100%;
-            padding: 12px;
+            padding: 14px;
             border: 1px solid rgba(255, 255, 255, 0.05);
             font-family: var(--font-street);
-            font-size: 10px;
+            font-size: 11px;
             text-transform: uppercase;
             font-weight: 800;
             letter-spacing: 2px;
@@ -826,7 +833,7 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 16px;
+            gap: 12px;
             margin-bottom: 50px;
         }
 
@@ -873,7 +880,7 @@
             transform: translateY(-5px);
         }
 
-        /* Imagem e Overlay do Produto */
+        /* Imagem do Produto */
         .product-img-wrapper {
             position: relative;
             width: 100%;
@@ -887,7 +894,6 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-            /* Filtro de atitude streetwear */
             filter: grayscale(0.2) contrast(1.1) brightness(0.85);
         }
 
@@ -1187,7 +1193,7 @@
         }
 
         .faq-item.active .faq-answer {
-            max-height: 200px; /* Suficiente para o texto da resposta */
+            max-height: 220px; /* Suficiente para todo o conteúdo sem cortar */
             padding-bottom: 24px;
         }
 
@@ -1332,7 +1338,7 @@
             pointer-events: none;
         }
 
-        /* Notificação Simulada no WhatsApp */
+        /* Notificação de balão que surge com atraso */
         .whatsapp-bubble {
             background: #1c1c1e;
             border: 1px solid rgba(255, 255, 255, 0.05);
@@ -1453,8 +1459,25 @@
         }
 
         /* ==========================================================================
-           11. RESPONSIVIDADE COMPLETA
+           11. RESPONSIVIDADE COMPLETA E OTIMIZADA PARA MOBILE
            ========================================================================== */
+        
+        /* Ajuste responsivo de paddings nas seções para telas menores (Melhor UX mobile) */
+        @media (max-width: 768px) {
+            .concept, .services, .catalog, .testimonials, .faq {
+                padding: 80px 0;
+            }
+            .hero-gothic-cross {
+                display: none; /* Evita quebra de largura/overflow do texto gigante */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .concept, .services, .catalog, .testimonials, .faq {
+                padding: 60px 0;
+            }
+        }
+
         @media (max-width: 992px) {
             .section-title {
                 font-size: 32px;
@@ -1511,7 +1534,7 @@
 
             .concept-visual {
                 height: 400px;
-                order: -1;
+                order: -1; /* Joga a colagem visual de atitude para cima antes do texto */
             }
 
             .visual-card {
@@ -1596,6 +1619,7 @@
             }
         }
 
+        /* Otimizações críticas para telas pequenas (ex: iPhone SE e similares de 320px-375px) */
         @media (max-width: 480px) {
             .hero-title {
                 font-size: 34px;
@@ -1605,12 +1629,64 @@
                 font-size: 38px;
             }
 
+            .hero-rose-wrapper {
+                width: 270px;
+                height: 270px;
+            }
+
+            .hero-rose-halo {
+                width: 220px;
+                height: 220px;
+            }
+
+            .hero-rose-img {
+                width: 180px;
+                height: 180px;
+            }
+
             .products-grid {
                 grid-template-columns: 1fr;
             }
 
             .product-img-wrapper {
-                height: 320px;
+                height: 290px; /* Redução para encaixar melhor em proporção mobile */
+            }
+
+            .whatsapp-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+            }
+
+            .whatsapp-bubble {
+                max-width: 210px;
+                padding: 10px 14px;
+                font-size: 11px;
+                margin-bottom: 8px;
+            }
+
+            .brand-name {
+                font-size: 20px;
+                letter-spacing: 2px;
+            }
+
+            .brand-logo-img {
+                width: 36px;
+                height: 36px;
+            }
+
+            .faq-question {
+                padding: 20px;
+                font-size: 14px;
+            }
+
+            .faq-answer {
+                padding: 0 20px;
+            }
+
+            .faq-item.active .faq-answer {
+                padding-bottom: 20px;
+                max-height: 280px; /* Garante espaço extra para quebra de linhas */
             }
         }
     </style>
@@ -1641,7 +1717,7 @@
                 Iniciar Curadoria <i class="fa-solid fa-cross-hairs" style="margin-left: 6px;"></i>
             </button>
 
-            <button class="mobile-menu-btn" id="mobile-toggle" aria-label="Menu de Navegação">
+            <button class="mobile-menu-btn" id="mobile-toggle" aria-label="Abrir Menu de Navegação">
                 <i class="fa-solid fa-bars-staggered"></i>
             </button>
         </div>
@@ -1663,7 +1739,7 @@
                     <span>UNDERGROUND</span>
                 </h1>
                 <p class="hero-description">
-                    Importação direta de vestuário de luxo internacional. Inspirado na estética punk-gótica da Chrome Hearts e no drill das ruas globais, conectamos você ao que há de mais exclusivo no cenário mundial.
+                    Importação direta de vestuário de luxo internacional. Inspirado na estética punk-gótica e no drill das ruas globais, conectamos você ao que há de mais exclusivo no cenário mundial.
                 </p>
                 <div class="hero-buttons">
                     <a href="#catalogo" class="btn-primary">
@@ -1698,12 +1774,12 @@
                     <div style="display: flex; flex-direction: column; align-items: flex-start;">
                         <span class="concept-tagline" style="text-transform: uppercase;">Kardiá: O Coração das Ruas</span>
                     </div>
-                    <h2 class="section-title" style="text-align: left; font-size: 32px;">A Essência Grega e o Espírito Rebelde</h2>
+                    <h2 class="section-title" style="text-align: left; font-size: 32px;">A Essência das ruas e o Espírito Rebelde</h2>
                     <p class="concept-description">
-                        Em grego clássico, <strong>Kardiá (καρδιά)</strong> significa coração. Para nós, não é apenas um órgão, é o motor da rebeldia urbana. Nos inspiramos nas linhas góticas ornamentadas e nos metais pesados da <strong>Chrome Hearts</strong> para fundar um conceito de importação focado na excelência bruta e no mistério.
+                        Em grego clássico, <strong>Kardiá (καρδιά)</strong> significa coração. Para nós, não é apenas um órgão, é o motor da rebeldia urbana. Nos inspiramos nas linhas góticas ornamentadas e estilos únicos das ruas para fundar um conceito de importação focado na excelência bruta e no mistério.
                     </p>
                     <p class="concept-description">
-                        Não somos uma importadora de grandes estoques. Somos garimpeiros. Trazemos o exclusivo, o raro, a peça que define sua identidade no meio da multidão.
+                        Não somos uma importadora de grandes estoques. Somos garimpeiros. Trazemos o exclusivo, o raro e peças de 1 linha que define sua identidade no meio da multidão.
                     </p>
                     
                     <div class="concept-highlights">
@@ -1711,8 +1787,8 @@
                             <div class="highlight-icon">
                                 <i class="fa-solid fa-cross"></i>
                             </div>
-                            <h3 class="highlight-title">Zero Falsificação</h3>
-                            <p class="highlight-desc">Verificação minuciosa e certificação de originalidade em 100% das curadorias.</p>
+                            <h3 class="highlight-title">Curadoria de Sangue</h3>
+                            <p class="highlight-desc">Cada peça é escolhida a dedo, autenticada e trazida para você com a mesma paixão e precisão de um coração pulsando forte.</p>
                         </div>
                         <div class="highlight-item">
                             <div class="highlight-icon">
@@ -1755,7 +1831,7 @@
                     </div>
                     <h3 class="service-title">Sourcing Exclusivo</h3>
                     <p class="service-desc">
-                        Encontramos itens raros e esgotados em drops globais (Chrome Hearts, Supreme, Travis Scott, etc.). Nossa rede global adquire e autentica a peça para você.
+                        Encontramos itens raros e esgotados em drops globais, importamos itens de 1 linha para facilitar o processo de importalções, como hubbuy, cssbuy, entre outras.
                     </p>
                     <div class="service-price-wrapper">
                         <span class="price-label">Taxa de Curadoria</span>
@@ -1803,7 +1879,7 @@
                     </div>
                     <h3 class="service-title">Redirecionamento</h3>
                     <p class="service-desc">
-                        Fornecemos endereços físicos seguros nos EUA, Europa e Ásia para você fazer suas compras. Recebemos, consolidamos e enviamos tudo em segurança ao Brasil.
+                        Recebemos, consolidamos e enviamos tudo em segurança para todo o Brasil.
                     </p>
                     <div class="service-price-wrapper">
                         <span class="price-label">Taxa de Box</span>
@@ -1855,7 +1931,7 @@
                         </p>
                         <div class="product-price-row">
                             <span class="product-price-label">Preço</span>
-                            <!-- NOTA PARA O USUÁRIO: Deixado em 'Sob Consulta' por solicitação. Altere o valor abaixo se quiser colocar preços -->
+                            <!-- NOTA PARA O USUÁRIO: Altere o valor abaixo se quiser colocar preços -->
                             <span class="product-price-value">Sob Consulta <i class="fa-solid fa-heart"></i></span>
                         </div>
                         <button class="product-cta-btn" onclick="contatoProdutoWhatsApp('Moletom Heavyweight Sacred Heart')">
@@ -1933,7 +2009,7 @@
                 <!-- Produto 5: Óculos (Acessório) -->
                 <div class="product-card" data-category="acessorios">
                     <div class="product-img-wrapper">
-                        <!-- NOTA PARA O USUÁRIO: Insira a foto de seus óculos ou acessório no 'src' abaixo -->
+                        <!-- NOTA PARA O USUÁRIO: Insira a foto de seus óculos no 'src' abaixo -->
                         <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&q=80" alt="Óculos Trap Shield Eclipse Kardiá" class="product-img">
                         <div class="product-badge">Premium</div>
                     </div>
@@ -1955,7 +2031,7 @@
                 <!-- Produto 6: Corrente (Acessório) -->
                 <div class="product-card" data-category="acessorios">
                     <div class="product-img-wrapper">
-                        <!-- NOTA PARA O USUÁRIO: Insira a foto de sua joia ou acessório no 'src' abaixo -->
+                        <!-- NOTA PARA O USUÁRIO: Insira a foto de sua joia no 'src' abaixo -->
                         <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80" alt="Colar Gothic Chain Kardiá" class="product-img">
                         <div class="product-badge rare">Prata 925</div>
                     </div>
@@ -2023,7 +2099,7 @@
                         <i class="fa-solid fa-heart"></i>
                     </div>
                     <p class="testimonial-text">
-                        "O redirecionamento deles funciona liso. Comprei roupas de marcas de drill de Londres pelo site gringo, mandei pro galpão deles e eles reenviaram pra mim. Zero dores de cabeça com taxas alfandegárias na alfândega."
+                        "O redirecionamento deles funciona liso. Comprei roupas de marcas de drill de Londres pelo site gringo, mandei pro galpão deles e eles reenviaram pra mim. Zero dores de cabeça com taxas na alfândega."
                     </p>
                     <div class="testimonial-user">
                         <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80" alt="Avatar Mariana Luz" class="user-avatar">
@@ -2079,17 +2155,17 @@
                         Como funciona a curadoria (Sourcing)? <i class="fa-solid fa-chevron-down faq-icon"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>Você nos envia referências, links ou apenas o nome do modelo e tamanho do item streetwear de luxo que procura. Nós ativamos nossos contatos no exterior para encontrar o produto legítimo. Enviamos fotos do produto e laudo de autenticidade prévio e, após sua validação, finalizamos a importação direta para o Brasil.</p>
+                        <p>Você nos envia referências, links ou apenas o nome do modelo e tamanho do item streetwear de luxo que procura. Nós ativamos nossos contatos no exterior para encontrar o produto. Enviamos fotos do produto e, após sua validação, finalizamos a importação direta para o Brasil.</p>
                     </div>
                 </div>
 
                 <!-- FAQ Item 2 -->
                 <div class="faq-item">
                     <button class="faq-question">
-                        As peças são realmente originais? <i class="fa-solid fa-chevron-down faq-icon"></i>
+                        Como funciona o estoque? <i class="fa-solid fa-chevron-down faq-icon"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>Autenticidade é inegociável na Kardiá. Todas as peças são submetidas a uma dupla inspeção por especialistas antes do despacho. Oferecemos garantia vitalícia de originalidade: se qualquer produto importado conosco falhar em auditorias oficiais das marcas, devolvemos 100% do seu investimento.</p>
+                        <p>Todo item que importamos, fica armazenado em nosso estoque no Brasil até que seja solicitado. Isso garante que você tenha acesso mais rápido às peças, te livrando qualquer problema que possa dar, como perda do produto, taxas altas ou qualquer outra coisa.</p>
                     </div>
                 </div>
 
@@ -2099,7 +2175,7 @@
                         Qual o prazo médio de entrega para o Brasil? <i class="fa-solid fa-chevron-down faq-icon"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>O prazo padrão de transporte aéreo internacional varia entre 12 a 22 dias úteis, contados a partir da data de postagem no nosso galpão de consolidação internacional (EUA/Europa/Ásia) até a sua porta.</p>
+                        <p>O prazo padrão de transporte aéreo internacional varia entre 20 a 40 dias úteis, contados a partir da data de postagem no nosso galpão de consolidação internacional (EUA/Europa/Ásia) até a sua porta.</p>
                     </div>
                 </div>
 
@@ -2109,7 +2185,7 @@
                         Correrei risco de taxação extra na alfândega? <i class="fa-solid fa-chevron-down faq-icon"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>Não. Na nossa modalidade de curadoria e sourcing, nós cobrimos todas as taxas aduaneiras e operacionais no Brasil. O valor acordado na negociação inicial é 100% final e sem surpresas. O produto chega liberado e desembaraçado na sua casa.</p>
+                        <p>Não. Na nossa modalidade de curadoria e sourcing, o valor acordado na negociação inicial é 100% final e sem surpresas. O produto chega liberado e desembaraçado na sua casa.</p>
                     </div>
                 </div>
 
@@ -2242,14 +2318,15 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             
-            // 2. Menu Mobile Responsivo
+            // 2. Menu Mobile Responsivo com Bloqueio de Scroll
             const mobileToggle = document.getElementById('mobile-toggle');
             const navMenu = document.getElementById('nav-menu');
 
             if (mobileToggle && navMenu) {
                 mobileToggle.addEventListener('click', () => {
                     navMenu.classList.toggle('active');
-                    // Troca o ícone de hambúrguer para fechar
+                    document.body.classList.toggle('menu-active');
+                    
                     const icon = mobileToggle.querySelector('i');
                     if (navMenu.classList.contains('active')) {
                         icon.className = 'fa-solid fa-xmark';
@@ -2262,6 +2339,7 @@
                 document.querySelectorAll('.nav-link').forEach(link => {
                     link.addEventListener('click', () => {
                         navMenu.classList.remove('active');
+                        document.body.classList.remove('menu-active');
                         mobileToggle.querySelector('i').className = 'fa-solid fa-bars-staggered';
                     });
                 });
@@ -2277,41 +2355,42 @@
                 }
             });
 
-            // 4. PARALLAX TRIDIMENSIONAL DA ROSA (Interativo e Liso)
+            // 4. PARALLAX DA ROSA (Otimizado para Touch / Scroll)
             const rose = document.getElementById('hero-rose');
             const roseWrapper = document.querySelector('.hero-rose-wrapper');
 
-            // Scroll Parallax (Rotação lenta da rosa com base no scroll)
+            // Scroll Parallax (Seguro em Mobile e Desktop)
             window.addEventListener('scroll', () => {
                 const scrolled = window.pageYOffset;
                 if (rose) {
-                    // Rotaciona, translada verticalmente e diminui sutilmente no scroll
+                    // Mantém rotação e escala perfeitamente fluidas
                     rose.style.transform = `rotate(${scrolled * 0.1}deg) translateY(${scrolled * 0.08}px) scale(${1 - (scrolled * 0.0003)})`;
                 }
             });
 
-            // Mouse Interactive 3D Tilt (Inclinação com movimento do mouse)
-            if (roseWrapper && rose) {
-                roseWrapper.addEventListener('mousemove', (e) => {
-                    const rect = roseWrapper.getBoundingClientRect();
-                    const x = e.clientX - rect.left - rect.width / 2;
-                    const y = e.clientY - rect.top - rect.height / 2;
-                    
-                    // Fatores de suavidade e força do tilt
-                    const tiltX = (y / (rect.height / 2)) * -12; // inclina verticalmente
-                    const tiltY = (x / (rect.width / 2)) * 12;   // inclina horizontalmente
-                    
-                    const scrolled = window.pageYOffset;
-                    // Mantém a rotação básica do scroll mas adiciona o 3D tilt
-                    rose.style.transform = `rotate(${scrolled * 0.1}deg) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(1.04)`;
-                    rose.style.boxShadow = `${-tiltY * 1.5}px ${tiltX * 1.5}px 30px rgba(158, 0, 24, 0.45)`;
-                });
+            // Mouse Interactive 3D Tilt - APENAS para Computadores (Desktop) com Hover suportado
+            // Evita pulos e problemas em telas touch
+            if (window.matchMedia('(hover: hover)').matches) {
+                if (roseWrapper && rose) {
+                    roseWrapper.addEventListener('mousemove', (e) => {
+                        const rect = roseWrapper.getBoundingClientRect();
+                        const x = e.clientX - rect.left - rect.width / 2;
+                        const y = e.clientY - rect.top - rect.height / 2;
+                        
+                        const tiltX = (y / (rect.height / 2)) * -12;
+                        const tiltY = (x / (rect.width / 2)) * 12;
+                        
+                        const scrolled = window.pageYOffset;
+                        rose.style.transform = `rotate(${scrolled * 0.1}deg) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(1.04)`;
+                        rose.style.boxShadow = `${-tiltY * 1.5}px ${tiltX * 1.5}px 30px rgba(158, 0, 24, 0.45)`;
+                    });
 
-                roseWrapper.addEventListener('mouseleave', () => {
-                    const scrolled = window.pageYOffset;
-                    rose.style.transform = `rotate(${scrolled * 0.1}deg) rotateX(0deg) rotateY(0deg) scale(1)`;
-                    rose.style.boxShadow = `0 0 50px rgba(0,0,0,0.9)`;
-                });
+                    roseWrapper.addEventListener('mouseleave', () => {
+                        const scrolled = window.pageYOffset;
+                        rose.style.transform = `rotate(${scrolled * 0.1}deg) rotateX(0deg) rotateY(0deg) scale(1)`;
+                        rose.style.boxShadow = `0 0 50px rgba(0,0,0,0.9)`;
+                    });
+                }
             }
 
             // 5. FILTROS DINÂMICOS DO CATÁLOGO
@@ -2320,9 +2399,7 @@
 
             filterButtons.forEach(button => {
                 button.addEventListener('click', () => {
-                    // Remove active de todos
                     filterButtons.forEach(btn => btn.classList.remove('active'));
-                    // Adiciona active no clicado
                     button.classList.add('active');
 
                     const category = button.getAttribute('data-category');
@@ -2332,7 +2409,6 @@
                         
                         if (category === 'all' || cardCategory === category) {
                             card.style.display = 'flex';
-                            // Mini animação de fade-in
                             card.style.opacity = '0';
                             setTimeout(() => {
                                 card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
@@ -2353,18 +2429,15 @@
                 
                 question.addEventListener('click', () => {
                     const isActive = item.classList.contains('active');
-                    
-                    // Fecha todos os FAQs
                     faqItems.forEach(faq => faq.classList.remove('active'));
                     
-                    // Se o clicado não estava ativo, abre
                     if (!isActive) {
                         item.classList.add('active');
                     }
                 });
             });
 
-            // 7. BALÃO DE ATENÇÃO DO WHATSAPP (Notificação simulada pós 3 segundos)
+            // 7. BALÃO DE ATENÇÃO DO WHATSAPP (Apenas pós 3 segundos)
             const waBubble = document.getElementById('wa-bubble');
             const waBubbleClose = document.getElementById('wa-bubble-close');
 
