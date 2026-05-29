@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="LogoK.ico">
-    <title>Kardiá | High-End Streetwear & Importação Exclusiva</title>
+    <title>Kardiá | High-End Gothic Streetwear & Importação Exclusiva</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Kardiá - Importadora exclusiva de streetwear de luxo e underground. Sourcing especializado das marcas mais raras do mundo, inspirado na estética gothic, underground e rock.">
-    <meta name="keywords" content="Kardiá, streetwear, importadora de roupas, underground, streetwear de luxo, curadoria de roupas, importação de roupas, streetwear brasil">
+    <meta name="description" content="Kardiá - Importadora exclusiva de streetwear de luxo e underground. Sourcing especializado das marcas mais raras do mundo, inspirado na estética gothic e rock.">
+    <meta name="keywords" content="Kardiá, streetwear, importadora de roupas, Chrome Hearts, underground rap, streetwear de luxo, curadoria de roupas, roupas góticas, importação de roupas, streetwear brasil">
     <meta name="author" content="Kardiá">
-    <meta property="og:title" content="Kardiá | High-End Streetwear & Importação">
+    <meta property="og:title" content="Kardiá | High-End Gothic Streetwear & Importação">
     <meta property="og:description" content="Traga a pulsação do streetwear global de luxo para o seu peito. Curadoria exclusiva de peças raras e importação direta sem preocupações.">
     <meta property="og:type" content="website">
     
@@ -27,6 +27,61 @@
 </head>
 <body>
 
+    <!-- Overlay e Sidebar Retrátil (Sumário) -->
+    <div id="sidebar-overlay" class="sidebar-overlay"></div>
+    <aside id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <img src="logo.png" alt="Logo Kardiá Sidebar" class="sidebar-logo-img">
+                <span class="brand-name">KARDIÁ</span>
+            </div>
+            <button id="sidebar-close" class="sidebar-close-btn" aria-label="Fechar Sumário">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="sidebar-group">
+                <button class="sidebar-group-toggle">Navegação <i class="fa-solid fa-chevron-down"></i></button>
+                <div class="sidebar-group-content">
+                    <a href="#home" class="sidebar-link"><i class="fa-solid fa-house"></i> Início</a>
+                    <a href="#conceito" class="sidebar-link"><i class="fa-solid fa-cross"></i> O Conceito</a>
+                    <a href="#servicos" class="sidebar-link"><i class="fa-solid fa-cross-hairs"></i> Serviços</a>
+                    <a href="#catalogo" class="sidebar-link"><i class="fa-solid fa-box-open"></i> Catálogo</a>
+                    <a href="#depoimentos" class="sidebar-link"><i class="fa-solid fa-comments"></i> Vozes das Ruas</a>
+                    <a href="#faq" class="sidebar-link"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+                </div>
+            </div>
+            <div class="sidebar-group">
+                <button class="sidebar-group-toggle">Catálogo <i class="fa-solid fa-chevron-down"></i></button>
+                <div class="sidebar-group-content">
+                    <a href="#produto-sacred-heart" class="sidebar-link"><i class="fa-solid fa-chevron-right"></i> Sacred Heart (Moletom)</a>
+                    <a href="#produto-drill-obsidian" class="sidebar-link"><i class="fa-solid fa-chevron-right"></i> Drill Obsidian (Calça)</a>
+                    <a href="#produto-gothic-rose" class="sidebar-link"><i class="fa-solid fa-chevron-right"></i> Gothic Rose (Camiseta)</a>
+                    <a href="#produto-silver-bullet" class="sidebar-link"><i class="fa-solid fa-chevron-right"></i> Silver Bullet (Jaqueta)</a>
+                    <a href="#produto-eclipse" class="sidebar-link"><i class="fa-solid fa-chevron-right"></i> Eclipse (Óculos)</a>
+                    <a href="#produto-sterling-chain" class="sidebar-link"><i class="fa-solid fa-chevron-right"></i> Gothic Chain (Corrente)</a>
+                </div>
+            </div>
+            <div class="sidebar-group">
+                <button class="sidebar-group-toggle">Sua Sacola <i class="fa-solid fa-chevron-down"></i></button>
+                <div class="sidebar-group-content">
+                    <a href="#carrinho" class="sidebar-link"><i class="fa-solid fa-bag-shopping"></i> Ver Carrinho</a>
+                </div>
+            </div>
+            <div class="sidebar-group">
+                <button class="sidebar-group-toggle">Fale Conosco <i class="fa-solid fa-chevron-down"></i></button>
+                <div class="sidebar-group-content">
+                    <a href="https://wa.me/5511963339981?text=Salve!%20Gostaria%20de%20tirar%20uma%20dúvida%20sobre%20as%20importações%20da%20Kardiá." target="_blank" class="sidebar-link"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                    <a href="mailto:sourcing@kardia.store" class="sidebar-link"><i class="fa-solid fa-envelope"></i> E-mail Oficial</a>
+                </div>
+            </div>
+        </nav>
+        <div class="sidebar-footer">
+            <p>© 2026 Kardiá Store</p>
+            <span>Underground Luxury Sourcing</span>
+        </div>
+    </aside>
+
     <!-- ==========================================================================
        PÁGINA PRINCIPAL (LANDING PAGE COMPLETA)
        ========================================================================== -->
@@ -35,10 +90,15 @@
         <!-- Header da Loja -->
         <header id="header">
             <div class="container nav-container">
-                <a href="#" class="brand-logo">
-                    <img src="logo.png" alt="Rosa Logo Kardiá" class="brand-logo-img">
-                    <span class="brand-name">KARDIÁ</span>
-                </a>
+                <div class="header-left">
+                    <button id="sidebar-toggle" class="sidebar-toggle-btn" aria-label="Abrir Sumário">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <a href="#" class="brand-logo">
+                        <img src="logo.png" alt="Rosa Logo Kardiá" class="brand-logo-img">
+                        <span class="brand-name">KARDIÁ</span>
+                    </a>
+                </div>
 
                 <nav class="nav-menu" id="nav-menu">
                     <a href="#home" class="nav-link">Início</a>
@@ -49,13 +109,20 @@
                     <a href="#faq" class="nav-link">FAQ</a>
                 </nav>
 
-                <button class="btn-header" onclick="contatoGeralWhatsApp()">
-                    Iniciar Curadoria <i class="fa-solid fa-cross-hairs" style="margin-left: 6px;"></i>
-                </button>
+                <div class="header-actions">
+                    <a href="#carrinho" class="cart-header-btn" aria-label="Ver Carrinho">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <span id="cart-badge" class="cart-badge" style="display: none;">0</span>
+                    </a>
 
-                <button class="mobile-menu-btn" id="mobile-toggle" aria-label="Abrir Menu de Navegação">
-                    <i class="fa-solid fa-bars-staggered"></i>
-                </button>
+                    <a href="https://wa.me/5511963339981?text=Salve!%20Entre%20no%20site%20de%20importação%20da%20Kardiá%20e%20gostaria%20de%20iniciar%20uma%20curadoria%20de%20roupas%20exclusivas." target="_blank" class="btn-header">
+                        Iniciar Curadoria <i class="fa-solid fa-cross-hairs" style="margin-left: 6px;"></i>
+                    </a>
+
+                    <button class="mobile-menu-btn" id="mobile-toggle" aria-label="Abrir Menu de Navegação">
+                        <i class="fa-solid fa-bars-staggered"></i>
+                    </button>
+                </div>
             </div>
         </header>
 
@@ -68,11 +135,11 @@
                         <i class="fa-solid fa-heart-pulse"></i> Sourcing de Luxo & Streetwear
                     </div>
                     <h1 class="hero-title">
-                        O CORAÇÃO DO
+                        A PULSAÇÃO DO
                         <span>UNDERGROUND</span>
                     </h1>
                     <p class="hero-description">
-                        Importação direta de vestuário de luxo internacional. Inspirado na estética das ruas globais, conectamos você ao que há de mais exclusivo no cenário mundial.
+                        Importação direta de vestuário de luxo internacional. Inspirado na estética punk-gótica da Chrome Hearts e no drill das ruas globais, conectamos você ao que há de mais exclusivo no cenário mundial.
                     </p>
                     <div class="hero-buttons">
                         <a href="#catalogo" class="btn-primary">
@@ -104,7 +171,7 @@
                         </div>
                         <h2 class="section-title" style="text-align: left; font-size: clamp(1.5rem, 3.5vw, 2rem);">A Essência Grega e o Espírito Rebelde</h2>
                         <p class="concept-description">
-                            Em grego clássico, <strong>Kardiá (καρδιά)</strong> significa coração. Para nós, não é apenas um órgão, é o motor da rebeldia urbana. Nos inspiramos nas estéticas das ruas para fundar um conceito de importação focado na excelência bruta e no mistério.
+                            Em grego clássico, <strong>Kardiá (καρδιά)</strong> significa coração. Para nós, não é apenas um órgão, é o motor da rebeldia urbana. Nos inspiramos nas linhas góticas ornamentadas e nos metais pesados da <strong>Chrome Hearts</strong> para fundar um conceito de importação focado na excelência bruta e no mistério.
                         </p>
                         <p class="concept-description">
                             Não somos uma importadora de grandes estoques. Somos garimpeiros. Trazemos o exclusivo, o raro, a peça que define sua identidade no meio da multidão.
@@ -115,8 +182,8 @@
                                 <div class="highlight-icon">
                                     <i class="fa-solid fa-cross"></i>
                                 </div>
-                                <h3 class="highlight-title">Facilidade na importação</h3>
-                                <p class="highlight-desc">Nossa equipe especializada facilita todo o processo de importação para você.</p>
+                                <h3 class="highlight-title">Zero Falsificação</h3>
+                                <p class="highlight-desc">Verificação minuciosa e certificação de originalidade em 100% das curadorias.</p>
                             </div>
                             <div class="highlight-item">
                                 <div class="highlight-icon">
@@ -150,13 +217,13 @@
                         <div class="service-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
                         <h3 class="service-title">Sourcing Exclusivo</h3>
                         <p class="service-desc">
-                            Encontramos itens únicos em drops globais. Nossa rede global adquire e envia a peça para você.
+                            Encontramos itens raros e esgotados em drops globais (Chrome Hearts, Supreme, Travis Scott, etc.). Nossa rede global adquire e autentica a peça para você.
                         </p>
                         <div class="service-price-wrapper">
                             <span class="price-label">Taxa de Curadoria</span>
                             <span class="price-value">Sob Consulta</span>
                         </div>
-                        <button class="service-cta" onclick="contatoServicoWhatsApp('Sourcing Exclusivo')">Consultar Serviço</button>
+                        <a href="https://wa.me/5511963339981?text=Salve!%20Tenho%20interesse%20no%20serviço%20de%20%22Sourcing%20Exclusivo%22%20da%20Kardiá.%20Gostaria%20de%20entender%20melhor%20como%20funciona%20e%20solicitar%20um%20orçamento%20personalizado." target="_blank" class="service-cta">Consultar Serviço</a>
                     </div>
 
                     <div class="service-card">
@@ -169,7 +236,7 @@
                             <span class="price-label">Taxa de Operação</span>
                             <span class="price-value">Sob Consulta</span>
                         </div>
-                        <button class="service-cta" onclick="contatoServicoWhatsApp('Importação Direta')">Consultar Serviço</button>
+                        <a href="https://wa.me/5511963339981?text=Salve!%20Tenho%20interesse%20no%20serviço%20de%20%22Importação%20Direta%22%20da%20Kardiá.%20Gostaria%20de%20entender%20melhor%20como%20funciona%20e%20solicitar%20um%20orçamento%20personalizado." target="_blank" class="service-cta">Consultar Serviço</a>
                     </div>
 
                     <div class="service-card">
@@ -182,7 +249,7 @@
                             <span class="price-label">Lotes e Frete</span>
                             <span class="price-value">Sob Consulta</span>
                         </div>
-                        <button class="service-cta" onclick="contatoServicoWhatsApp('Drops Coletivos B2B')">Consultar Serviço</button>
+                        <a href="https://wa.me/5511963339981?text=Salve!%20Tenho%20interesse%20no%20serviço%20de%20%22Drops%20Coletivos%20B2B%22%20da%20Kardiá.%20Gostaria%20de%20entender%20melhor%20como%20funciona%20e%20solicitar%20um%20orçamento%20personalizado." target="_blank" class="service-cta">Consultar Serviço</a>
                     </div>
 
                     <div class="service-card">
@@ -195,7 +262,7 @@
                             <span class="price-label">Taxa de Box</span>
                             <span class="price-value">Sob Consulta</span>
                         </div>
-                        <button class="service-cta" onclick="contatoServicoWhatsApp('Redirecionamento de Encomendas')">Consultar Serviço</button>
+                        <a href="https://wa.me/5511963339981?text=Salve!%20Tenho%20interesse%20no%20serviço%20de%20%22Redirecionamento%20de%20Encomendas%22%20da%20Kardiá.%20Gostaria%20de%20entender%20melhor%20como%20funciona%20e%20solicitar%20um%20orçamento%20personalizado." target="_blank" class="service-cta">Consultar Serviço</a>
                     </div>
                 </div>
             </div>
@@ -397,35 +464,35 @@
                     <div class="faq-item">
                         <button class="faq-question">Como funciona a curadoria (Sourcing)? <i class="fa-solid fa-chevron-down faq-icon"></i></button>
                         <div class="faq-answer">
-                            <p>Você nos envia referências, links ou apenas o nome do modelo e tamanho do item streetwear de luxo que procura. Nós ativamos nossos contatos no exterior para encontrar o produto. Enviamos fotos do produto e, após sua validação, finalizamos a importação direta para o Brasil.</p>
+                            <p>Você nos envia referências, links ou apenas o nome do modelo e tamanho do item streetwear de luxo que procura. Nós ativamos nossos contatos no exterior para encontrar o produto legítimo. Enviamos fotos do produto e laudo de autenticidade prévio e, após sua validação, finalizamos a importação direta para o Brasil.</p>
                         </div>
                     </div>
 
                     <div class="faq-item">
-                        <button class="faq-question">Vocês trabalham com estoque? <i class="fa-solid fa-chevron-down faq-icon"></i></button>
+                        <button class="faq-question">As peças são realmente originais? <i class="fa-solid fa-chevron-down faq-icon"></i></button>
                         <div class="faq-answer">
-                            <p>Abrimos recentemente e estocar produtos é arriscado para nós, porém pretendemos expandir nossa oferta de forma estratégica no futuro e se Deus quiser, estocaremos produtos e assim facilitando a entrega do protudo para todo o Brasil.</p>
+                            <p>Autenticidade é inegociável na Kardiá. Todas as peças são submetidas a uma dupla inspeção por especialistas antes do despacho. Oferecemos garantia vitalícia de originalidade: se qualquer produto importado conosco falhar em auditorias oficiais das marcas, devolvemos 100% do seu investimento.</p>
                         </div>
                     </div>
 
                     <div class="faq-item">
                         <button class="faq-question">Qual o prazo médio de entrega para o Brasil? <i class="fa-solid fa-chevron-down faq-icon"></i></button>
                         <div class="faq-answer">
-                            <p>O prazo padrão de transporte aéreo internacional varia entre 30 a 40 dias úteis, contados a partir da data de postagem no nosso galpão de consolidação internacional (EUA/Europa/Ásia) até a sua porta.</p>
+                            <p>O prazo padrão de transporte aéreo internacional varia entre 12 a 22 dias úteis, contados a partir da data de postagem no nosso galpão de consolidação internacional (EUA/Europa/Ásia) até a sua porta.</p>
                         </div>
                     </div>
 
                     <div class="faq-item">
                         <button class="faq-question">Correrei risco de taxação extra na alfândega? <i class="fa-solid fa-chevron-down faq-icon"></i></button>
                         <div class="faq-answer">
-                            <p>Não. Na nossa modalidade de curadoria e sourcing, o valor acordado na negociação inicial é 100% final e sem surpresas. O produto chega liberado e desembaraçado na sua casa.</p>
+                            <p>Não. Na nossa modalidade de curadoria e sourcing, nós cobrimos todas as taxas aduaneiras e operacionais no Brasil. O valor acordado na negociação inicial é 100% final e sem surpresas. O produto chega liberado e desembaraçado na sua casa.</p>
                         </div>
                     </div>
 
                     <div class="faq-item">
                         <button class="faq-question">Como faço para iniciar meu orçamento? <i class="fa-solid fa-chevron-down faq-icon"></i></button>
                         <div class="faq-answer">
-                            <p>Basta clicar no botão flutuante de WhatsApp fixo. Nosso canal direto no aplicativo (11) 96333-9981 conecta você imediatamente a um de nossos curadores de estilo, pronto para cotar sua importação ou dê uma olhada nos catálogos que disponibilizamos.</p>
+                            <p>Basta clicar no botão flutuante de WhatsApp fixo. Nosso canal direto no aplicativo (11) 96333-9981 conecta você imediatamente a um de nossos curadores de estilo, pronto para cotar sua importação.</p>
                         </div>
                     </div>
                 </div>
@@ -441,7 +508,7 @@
                             <img src="logo.png" alt="Logo Kardiá Footer" class="footer-logo-img">
                             <span class="brand-name">KARDIÁ</span>
                         </div>
-                        <p class="footer-desc">O coração do streetwear. Importação dedicada do underground global diretamente para as ruas do Brasil.</p>
+                        <p class="footer-desc">O coração gótico do streetwear. Importação dedicada do underground global diretamente para as ruas do Brasil.</p>
                         <div class="footer-socials">
                             <a href="https://instagram.com" target="_blank" class="social-link" aria-label="Instagram Kardiá"><i class="fa-brands fa-instagram"></i></a>
                             <a href="https://pinterest.com" target="_blank" class="social-link" aria-label="Pinterest Kardiá"><i class="fa-brands fa-pinterest-p"></i></a>
@@ -491,6 +558,11 @@
        PÁGINA DEDICADA DO PRODUTO (SPA VIEW - GERADO DINAMICAMENTE PELO JS)
        ========================================================================== -->
     <div id="product-page" class="page-state hidden"></div>
+
+    <!-- ==========================================================================
+       PÁGINA DO CARRINHO (SPA VIEW - GERADO DINAMICAMENTE PELO JS)
+       ========================================================================== -->
+    <div id="cart-page" class="page-state hidden"></div>
 
     <!-- ==========================================================================
        WHATSAPP FIXO FLUTUANTE
