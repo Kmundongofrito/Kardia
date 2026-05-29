@@ -7,8 +7,8 @@
     <title>Kardiá | High-End Streetwear & Importação Exclusiva</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Kardiá - Importadora exclusiva de streetwear de luxo e underground. Sourcing especializado das marcas mais raras do mundo, inspirado na estética gothic e rock.">
-    <meta name="keywords" content="Kardiá, streetwear, importadora de roupas, underground rap, streetwear de luxo, curadoria de roupas, roupas góticas, importação de roupas, streetwear brasil">
+    <meta name="description" content="Kardiá - Importadora exclusiva de streetwear de luxo e underground. Sourcing especializado das marcas mais raras do mundo, inspirado na estética gothic, underground e rock.">
+    <meta name="keywords" content="Kardiá, streetwear, importadora de roupas, underground, streetwear de luxo, curadoria de roupas, importação de roupas, streetwear brasil">
     <meta name="author" content="Kardiá">
     <meta property="og:title" content="Kardiá | High-End Streetwear & Importação">
     <meta property="og:description" content="Traga a pulsação do streetwear global de luxo para o seu peito. Curadoria exclusiva de peças raras e importação direta sem preocupações.">
@@ -22,2259 +22,482 @@
     <!-- FontAwesome para ícones góticos e redes sociais -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <style>
-        /* ==========================================================================
-           1. VARIÁVEIS E CONFIGURAÇÕES GERAIS (ESTILO CHROME HEARTS / GOTHIC)
-           ========================================================================== */
-        :root {
-            --bg-deep: #070708;       /* Preto carvão profundo medieval */
-            --bg-surface: #111113;    /* Superfície de metal escurecido/couro */
-            --bg-card: #161619;       /* Cards industriais */
-            --primary: #9e0018;       /* Vermelho cardíaco profundo/gótico */
-            --primary-glow: rgba(158, 0, 24, 0.4);
-            --primary-light: #ff1a3d; /* Vermelho sangue neon para hovers */
-            --accent: #d1d1d6;        /* Prata esterlina */
-            --accent-glow: rgba(209, 209, 214, 0.2);
-            --text-main: #f2f2f7;     /* Branco de alto contraste */
-            --text-muted: #8e8e93;    /* Cinza concreto desbotado */
-            --border-color: rgba(209, 209, 214, 0.08);
-            --border-glow: rgba(158, 0, 24, 0.15);
-            --font-gothic: 'Cinzel Decorative', serif;
-            --font-sub: 'Cinzel', serif;
-            --font-body: 'Plus Jakarta Sans', sans-serif;
-            --font-street: 'Syne', sans-serif;
-            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--bg-deep);
-            color: var(--text-main);
-            font-family: var(--font-body);
-            overflow-x: hidden;
-            line-height: 1.6;
-            /* Textura de grade sutil para estética streetwear industrial */
-            background-image: 
-                radial-gradient(rgba(158, 0, 24, 0.04) 1px, transparent 0), 
-                radial-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 0);
-            background-size: 32px 32px;
-            background-position: 0 0, 16px 16px;
-        }
-
-        /* Bloqueio de rolagem quando menu mobile está aberto */
-        body.menu-active {
-            overflow: hidden;
-        }
-
-        /* Barra de rolagem gótica */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--bg-deep);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #252528;
-            border-radius: 4px;
-            border: 2px solid var(--bg-deep);
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--primary);
-            box-shadow: 0 0 10px var(--primary-glow);
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        button {
-            cursor: pointer;
-            border: none;
-            background: none;
-            font-family: inherit;
-            transition: var(--transition);
-            touch-action: manipulation; /* Otimização de clique em telas touch */
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        /* Utilitários Globais */
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        .section-title-wrapper {
-            text-align: center;
-            margin-bottom: 60px;
-            position: relative;
-        }
-
-        .section-subtitle {
-            font-family: var(--font-street);
-            color: var(--primary-light);
-            text-transform: uppercase;
-            font-size: 13px;
-            letter-spacing: 4px;
-            display: inline-block;
-            margin-bottom: 12px;
-            font-weight: 800;
-        }
-
-        .section-title {
-            font-family: var(--font-gothic);
-            font-size: 38px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            color: var(--text-main);
-            text-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title::after {
-            content: "";
-            display: block;
-            width: 50px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--primary), transparent);
-            margin: 15px auto 0 auto;
-            box-shadow: 0 0 8px var(--primary-light);
-        }
-
-        /* Efeito de Vidro Fosco (Glassmorphism) */
-        .glass-panel {
-            background: rgba(22, 22, 25, 0.7);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--border-color);
-        }
-
-        /* ==========================================================================
-           2. HEADER E NAVEGAÇÃO
-           ========================================================================== */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            transition: var(--transition);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.02);
-        }
-
-        header.scrolled {
-            background: rgba(7, 7, 8, 0.9);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(158, 0, 24, 0.15);
-            padding: 8px 0;
-        }
-
-        header .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 80px;
-            transition: var(--transition);
-        }
-
-        header.scrolled .nav-container {
-            height: 65px;
-        }
-
-        /* Logo Brand */
-        .brand-logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .brand-logo-img {
-            width: 44px;
-            height: 44px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 1px solid var(--primary);
-            /* O filtro inverte a rosa preta desenhada no papel para uma rosa prateada/neon sobre fundo escuro */
-            filter: invert(1) brightness(1.2) contrast(1.1);
-            box-shadow: 0 0 10px rgba(158, 0, 24, 0.3);
-            transition: var(--transition);
-        }
-
-        .brand-logo:hover .brand-logo-img {
-            transform: rotate(45deg);
-            box-shadow: 0 0 15px var(--primary-glow);
-            border-color: var(--primary-light);
-        }
-
-        .brand-name {
-            font-family: var(--font-gothic);
-            font-size: 24px;
-            font-weight: 900;
-            letter-spacing: 3px;
-            background: linear-gradient(135deg, var(--text-main) 30%, var(--accent) 70%, var(--primary-light) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 12px rgba(255, 0, 60, 0.15);
-        }
-
-        /* Links de Navegação */
-        .nav-menu {
-            display: flex;
-            align-items: center;
-            gap: 32px;
-        }
-
-        .nav-link {
-            font-family: var(--font-sub);
-            font-size: 13px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--text-muted);
-            position: relative;
-            padding: 8px 0;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 1px;
-            background-color: var(--primary-light);
-            box-shadow: 0 0 5px var(--primary-light);
-            transition: var(--transition);
-            transform: translateX(-50%);
-        }
-
-        .nav-link:hover {
-            color: var(--text-main);
-            text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        /* Botão do Header */
-        .btn-header {
-            font-family: var(--font-street);
-            font-size: 11px;
-            text-transform: uppercase;
-            font-weight: 800;
-            letter-spacing: 2px;
-            padding: 10px 20px;
-            border: 1px solid var(--accent);
-            color: var(--text-main);
-            border-radius: 0px; /* Estética angular Chrome Hearts */
-            position: relative;
-            overflow: hidden;
-            background: transparent;
-        }
-
-        .btn-header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
-            transition: 0.5s;
-        }
-
-        .btn-header:hover::before {
-            left: 100%;
-        }
-
-        .btn-header:hover {
-            border-color: var(--primary-light);
-            box-shadow: 0 0 15px var(--primary-glow);
-            color: var(--primary-light);
-            transform: translateY(-2px);
-        }
-
-        /* Menu Mobile Toggle */
-        .mobile-menu-btn {
-            display: none;
-            color: var(--text-main);
-            font-size: 24px;
-            padding: 10px;
-            background: transparent;
-            z-index: 1001;
-        }
-
-        /* ==========================================================================
-           3. HERO SECTION (A PULSAÇÃO UNDERGROUND E PARALLAX DA ROSA)
-           ========================================================================== */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            padding-top: 100px;
-            overflow: hidden;
-            background: radial-gradient(circle at 50% 50%, rgba(158, 0, 24, 0.08) 0%, transparent 60%);
-        }
-
-        /* Elementos de fundo */
-        .hero-gothic-cross {
-            position: absolute;
-            font-size: 45vh;
-            color: rgba(255, 255, 255, 0.012);
-            font-family: var(--font-gothic);
-            top: 50%;
-            left: 5%;
-            transform: translateY(-50%);
-            pointer-events: none;
-            user-select: none;
-            line-height: 1;
-        }
-
-        .hero .container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            gap: 60px;
-            z-index: 10;
-        }
-
-        .hero-content {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .hero-badge {
-            background: rgba(158, 0, 24, 0.15);
-            border: 1px solid rgba(158, 0, 24, 0.3);
-            color: var(--primary-light);
-            font-family: var(--font-street);
-            font-size: 11px;
-            font-weight: 800;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            padding: 8px 16px;
-            margin-bottom: 24px;
-            box-shadow: 0 0 10px rgba(158, 0, 24, 0.15);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .hero-badge i {
-            animation: heartbeat 1.5s infinite;
-        }
-
-        .hero-title {
-            font-family: var(--font-gothic);
-            font-size: 72px;
-            line-height: 0.95;
-            font-weight: 900;
-            letter-spacing: 2px;
-            margin-bottom: 24px;
-            color: var(--text-main);
-            text-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
-        }
-
-        .hero-title span {
-            font-family: var(--font-street);
-            font-size: 80px;
-            display: block;
-            background: linear-gradient(90deg, var(--primary-light), var(--text-main), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 800;
-            letter-spacing: -2px;
-        }
-
-        .hero-description {
-            font-size: 16px;
-            color: var(--text-muted);
-            margin-bottom: 40px;
-            max-width: 500px;
-            font-weight: 300;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-            width: 100%;
-        }
-
-        .btn-primary {
-            font-family: var(--font-street);
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            background: var(--primary);
-            color: var(--text-main);
-            padding: 16px 36px;
-            border: 1px solid var(--primary);
-            box-shadow: 0 0 20px var(--primary-glow);
-            position: relative;
-            overflow: hidden;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .btn-primary:hover {
-            background: transparent;
-            border-color: var(--primary-light);
-            color: var(--primary-light);
-            box-shadow: 0 0 30px rgba(255, 26, 61, 0.4);
-            transform: translateY(-3px);
-        }
-
-        .btn-secondary {
-            font-family: var(--font-street);
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--text-muted);
-            padding: 16px 36px;
-            background: rgba(255, 255, 255, 0.02);
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--accent);
-            color: var(--text-main);
-            background: rgba(255, 255, 255, 0.05);
-            transform: translateY(-3px);
-        }
-
-        /* Wrapper da Rosa central e Animações */
-        .hero-image-side {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-
-        .hero-rose-wrapper {
-            position: relative;
-            width: 420px;
-            height: 420px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            perspective: 1000px;
-        }
-
-        /* Auréola Gótica/Mística brilhando atrás da Rosa */
-        .hero-rose-halo {
-            position: absolute;
-            width: 320px;
-            height: 320px;
-            border-radius: 50%;
-            border: 1px dashed rgba(209, 209, 214, 0.12);
-            animation: spin 35s linear infinite;
-            pointer-events: none;
-        }
-
-        .hero-rose-halo::before {
-            content: 'KARDIÁ • EXCLUSIVE • SOURCING • UNDERGROUND •';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            font-family: var(--font-sub);
-            font-size: 9px;
-            letter-spacing: 3px;
-            color: rgba(209, 209, 214, 0.25);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 10px;
-            box-sizing: border-box;
-            border-radius: 50%;
-        }
-
-        .hero-rose-glow {
-            position: absolute;
-            width: 260px;
-            height: 260px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(158, 0, 24, 0.25) 0%, transparent 70%);
-            filter: blur(15px);
-            animation: pulse-glow 4s ease-in-out infinite alternate;
-            pointer-events: none;
-        }
-
-        .hero-rose-img {
-            width: 280px;
-            height: 280px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 2px solid rgba(255, 255, 255, 0.05);
-            /* FILTRO DE CONVERSÃO PARA PRATEADO NEON */
-            filter: invert(1) brightness(1.2) contrast(1.1) drop-shadow(0 0 25px rgba(158, 0, 24, 0.5));
-            box-shadow: 0 0 50px rgba(0,0,0,0.9);
-            z-index: 5;
-            user-select: none;
-            pointer-events: none;
-            transition: transform 0.1s ease-out;
-            transform-style: preserve-3d;
-        }
-
-        /* ==========================================================================
-           4. SEÇÃO CONCEITO / SOBRE A MARCA
-           ========================================================================== */
-        .concept {
-            padding: 120px 0;
-            background: linear-gradient(180deg, var(--bg-deep) 0%, #0c0c0e 50%, var(--bg-deep) 100%);
-            position: relative;
-        }
-
-        .concept-grid {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            align-items: center;
-            gap: 80px;
-        }
-
-        .concept-text {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-
-        .concept-tagline {
-            font-family: var(--font-street);
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--text-main);
-            letter-spacing: -0.5px;
-            line-height: 1.4;
-            border-left: 3px solid var(--primary-light);
-            padding-left: 20px;
-        }
-
-        .concept-description {
-            font-size: 15px;
-            color: var(--text-muted);
-            font-weight: 300;
-        }
-
-        .concept-highlights {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .highlight-item {
-            background: var(--bg-surface);
-            border: 1px solid var(--border-color);
-            padding: 24px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            transition: var(--transition);
-        }
-
-        .highlight-item:hover {
-            border-color: var(--primary-light);
-            box-shadow: 0 5px 20px rgba(158, 0, 24, 0.1);
-            transform: translateY(-5px);
-        }
-
-        .highlight-icon {
-            font-size: 22px;
-            color: var(--primary-light);
-            width: 44px;
-            height: 44px;
-            border: 1px solid rgba(158, 0, 24, 0.2);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: rgba(158, 0, 24, 0.05);
-        }
-
-        .highlight-title {
-            font-family: var(--font-sub);
-            font-size: 14px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .highlight-desc {
-            font-size: 12px;
-            color: var(--text-muted);
-        }
-
-        /* Estética colagem urbana/rock no lado direito */
-        .concept-visual {
-            position: relative;
-            width: 100%;
-            height: 450px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .visual-card {
-            position: absolute;
-            width: 280px;
-            height: 380px;
-            background-size: cover;
-            background-position: center;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
-            transition: var(--transition);
-        }
-
-        .visual-card-1 {
-            background-image: url('https://images.unsplash.com/photo-1517462964-21fdcec3f25b?auto=format&fit=crop&w=600&q=80');
-            transform: rotate(-6deg) translateX(-30px);
-            z-index: 1;
-            filter: grayscale(1) contrast(1.2) brightness(0.7);
-        }
-
-        .visual-card-2 {
-            background-image: url('https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=600&q=80');
-            transform: rotate(6deg) translateX(30px);
-            z-index: 2;
-            filter: grayscale(1) contrast(1.3) brightness(0.6) sepia(0.2) hue-rotate(-40deg);
-            border-color: rgba(158, 0, 24, 0.3);
-        }
-
-        .concept-visual:hover .visual-card-1 {
-            transform: rotate(-12deg) translateX(-60px) scale(1.02);
-            filter: grayscale(0.6) contrast(1.1) brightness(0.8);
-        }
-
-        .concept-visual:hover .visual-card-2 {
-            transform: rotate(10deg) translateX(60px) scale(1.02);
-            filter: grayscale(0) contrast(1.2) brightness(0.8);
-            box-shadow: 0 20px 50px rgba(158, 0, 24, 0.3);
-        }
-
-        .visual-badge {
-            position: absolute;
-            bottom: 30px;
-            right: 0;
-            background: var(--primary);
-            color: var(--text-main);
-            font-family: var(--font-gothic);
-            font-size: 13px;
-            font-weight: 700;
-            padding: 12px 24px;
-            z-index: 10;
-            box-shadow: 0 10px 30px rgba(158, 0, 24, 0.4);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        /* ==========================================================================
-           5. SEÇÃO DE SERVIÇOS (PREÇOS SOB CONSULTA / EXCLUSIVO)
-           ========================================================================== */
-        .services {
-            padding: 120px 0;
-            background-color: var(--bg-deep);
-            position: relative;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 30px;
-        }
-
-        .service-card {
-            background: var(--bg-surface);
-            border: 1px solid var(--border-color);
-            padding: 40px 30px;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            transition: var(--transition);
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary), transparent);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: var(--transition);
-        }
-
-        .service-card:hover {
-            border-color: rgba(158, 0, 24, 0.3);
-            box-shadow: 0 15px 40px rgba(158, 0, 24, 0.08);
-            transform: translateY(-10px);
-        }
-
-        .service-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .service-icon {
-            font-size: 32px;
-            color: var(--primary-light);
-            margin-bottom: 28px;
-            display: inline-block;
-            transition: var(--transition);
-        }
-
-        .service-card:hover .service-icon {
-            transform: scale(1.1) rotate(5deg);
-            text-shadow: 0 0 15px var(--primary-glow);
-        }
-
-        .service-title {
-            font-family: var(--font-sub);
-            font-size: 18px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 16px;
-            color: var(--text-main);
-        }
-
-        .service-desc {
-            font-size: 13px;
-            color: var(--text-muted);
-            margin-bottom: 30px;
-            flex-grow: 1;
-            font-weight: 300;
-        }
-
-        /* Detalhes sob consulta */
-        .service-price-wrapper {
-            border-top: 1px dashed rgba(255, 255, 255, 0.05);
-            padding-top: 24px;
-            margin-top: auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .price-label {
-            font-size: 11px;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            letter-spacing: 1px;
-        }
-
-        .price-value {
-            font-family: var(--font-street);
-            font-size: 14px;
-            color: var(--primary-light);
-            font-weight: 800;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            text-shadow: 0 0 8px rgba(255, 26, 61, 0.15);
-        }
-
-        .service-cta {
-            margin-top: 20px;
-            width: 100%;
-            padding: 14px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            font-family: var(--font-street);
-            font-size: 11px;
-            text-transform: uppercase;
-            font-weight: 800;
-            letter-spacing: 2px;
-            color: var(--text-main);
-            background: rgba(255, 255, 255, 0.01);
-            text-align: center;
-            display: block;
-        }
-
-        .service-card:hover .service-cta {
-            border-color: var(--primary);
-            background: var(--primary);
-            box-shadow: 0 0 15px var(--primary-glow);
-        }
-
-        /* ==========================================================================
-           6. CATÁLOGO INTERATIVO DE PRODUTOS (SEM PREÇO - EXCLUSIVOS)
-           ========================================================================== */
-        .catalog {
-            padding: 120px 0;
-            background: linear-gradient(180deg, var(--bg-deep) 0%, #0c0c0e 50%, var(--bg-deep) 100%);
-            position: relative;
-        }
-
-        /* Filtros por Categoria */
-        .catalog-filters {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 50px;
-        }
-
-        .filter-btn {
-            font-family: var(--font-street);
-            font-size: 12px;
-            text-transform: uppercase;
-            font-weight: 800;
-            letter-spacing: 2px;
-            padding: 12px 24px;
-            border: 1px solid var(--border-color);
-            background: var(--bg-surface);
-            color: var(--text-muted);
-            transition: var(--transition);
-        }
-
-        .filter-btn:hover, .filter-btn.active {
-            color: var(--text-main);
-            border-color: var(--primary-light);
-            background: rgba(158, 0, 24, 0.08);
-            box-shadow: 0 0 15px rgba(158, 0, 24, 0.15);
-        }
-
-        /* Grid de Produtos */
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 40px;
-        }
-
-        .product-card {
-            background: var(--bg-surface);
-            border: 1px solid var(--border-color);
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            transition: var(--transition);
-        }
-
-        .product-card:hover {
-            border-color: rgba(209, 209, 214, 0.2);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
-            transform: translateY(-5px);
-        }
-
-        /* Imagem do Produto */
-        .product-img-wrapper {
-            position: relative;
-            width: 100%;
-            height: 380px;
-            overflow: hidden;
-            background-color: #0b0b0c;
-        }
-
-        .product-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-            filter: grayscale(0.2) contrast(1.1) brightness(0.85);
-        }
-
-        .product-card:hover .product-img {
-            transform: scale(1.08);
-            filter: grayscale(0) contrast(1) brightness(0.95);
-        }
-
-        .product-badge {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background: rgba(7, 7, 8, 0.85);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            color: var(--text-main);
-            font-family: var(--font-street);
-            font-size: 9px;
-            font-weight: 800;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            padding: 6px 12px;
-            z-index: 10;
-        }
-
-        .product-badge.rare {
-            background: rgba(158, 0, 24, 0.85);
-            border-color: var(--primary-light);
-            box-shadow: 0 0 10px var(--primary-glow);
-            color: var(--text-main);
-        }
-
-        /* Detalhes do Produto */
-        .product-info {
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-            border-top: 1px solid rgba(255, 255, 255, 0.02);
-        }
-
-        .product-title {
-            font-family: var(--font-sub);
-            font-size: 19px;
-            font-weight: 800;
-            letter-spacing: 0.5px;
-            margin-bottom: 12px;
-            color: var(--text-main);
-        }
-
-        .product-desc {
-            font-size: 13px;
-            color: var(--text-muted);
-            margin-bottom: 24px;
-            flex-grow: 1;
-            font-weight: 300;
-            line-height: 1.5;
-        }
-
-        /* Preço Exclusivo */
-        .product-price-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.03);
-            padding-top: 20px;
-            margin-top: auto;
-        }
-
-        .product-price-label {
-            font-size: 10px;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            letter-spacing: 1px;
-        }
-
-        .product-price-value {
-            font-family: var(--font-street);
-            font-size: 13px;
-            color: var(--text-main);
-            font-weight: 800;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .product-price-value i {
-            color: var(--primary-light);
-            font-size: 10px;
-            animation: pulse-glow 2s infinite alternate;
-        }
-
-        /* Botão Consultar Disponibilidade */
-        .product-cta-btn {
-            margin-top: 20px;
-            width: 100%;
-            padding: 16px;
-            background: transparent;
-            border: 1px solid var(--accent);
-            color: var(--text-main);
-            font-family: var(--font-street);
-            font-size: 11px;
-            font-weight: 800;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            transition: var(--transition);
-        }
-
-        .product-card:hover .product-cta-btn {
-            background: var(--text-main);
-            color: var(--bg-deep);
-            border-color: var(--text-main);
-            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
-        }
-
-        .product-cta-btn:hover {
-            transform: scale(1.02);
-        }
-
-        /* ==========================================================================
-           7. DEPOIMENTOS DE CLIENTES (VOZES DAS RUAS)
-           ========================================================================== */
-        .testimonials {
-            padding: 120px 0;
-            background-color: var(--bg-deep);
-            position: relative;
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-
-        .testimonial-card {
-            background: var(--bg-surface);
-            border: 1px solid var(--border-color);
-            padding: 40px;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            transition: var(--transition);
-        }
-
-        .testimonial-card::after {
-            content: "\f10d";
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            position: absolute;
-            top: 30px;
-            right: 40px;
-            font-size: 40px;
-            color: rgba(255, 255, 255, 0.015);
-            pointer-events: none;
-        }
-
-        .testimonial-card:hover {
-            border-color: rgba(158, 0, 24, 0.25);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
-            transform: translateY(-5px);
-        }
-
-        /* Avaliação em Corações Góticos */
-        .testimonial-rating {
-            display: flex;
-            gap: 6px;
-            margin-bottom: 24px;
-            color: var(--primary-light);
-            font-size: 13px;
-        }
-
-        .testimonial-rating i {
-            filter: drop-shadow(0 0 3px var(--primary-light));
-        }
-
-        .testimonial-text {
-            font-size: 14px;
-            line-height: 1.7;
-            color: var(--text-main);
-            margin-bottom: 30px;
-            font-style: italic;
-            font-weight: 300;
-            flex-grow: 1;
-        }
-
-        .testimonial-user {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            border-top: 1px solid rgba(255, 255, 255, 0.03);
-            padding-top: 20px;
-        }
-
-        .user-avatar {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            filter: grayscale(1);
-            transition: var(--transition);
-        }
-
-        .testimonial-card:hover .user-avatar {
-            filter: grayscale(0);
-            border-color: var(--primary-light);
-            box-shadow: 0 0 10px var(--primary-glow);
-        }
-
-        .user-info {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .user-name {
-            font-family: var(--font-sub);
-            font-size: 14px;
-            font-weight: 700;
-            color: var(--text-main);
-            letter-spacing: 0.5px;
-        }
-
-        .user-role {
-            font-size: 11px;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* ==========================================================================
-           8. FAQ INTERATIVO (ACORDEON ACESSÍVEL)
-           ========================================================================== */
-        .faq {
-            padding: 120px 0;
-            background: linear-gradient(180deg, var(--bg-deep) 0%, #0c0c0e 50%, var(--bg-deep) 100%);
-        }
-
-        .faq-wrapper {
-            max-width: 800px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .faq-item {
-            background: var(--bg-surface);
-            border: 1px solid var(--border-color);
-            transition: var(--transition);
-        }
-
-        .faq-item:hover, .faq-item.active {
-            border-color: rgba(158, 0, 24, 0.25);
-        }
-
-        .faq-question {
-            width: 100%;
-            padding: 24px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            text-align: left;
-            font-family: var(--font-sub);
-            font-size: 16px;
-            font-weight: 700;
-            color: var(--text-main);
-            letter-spacing: 0.5px;
-        }
-
-        .faq-icon {
-            font-size: 14px;
-            color: var(--text-muted);
-            transition: transform 0.3s ease;
-        }
-
-        .faq-item.active .faq-icon {
-            transform: rotate(180deg);
-            color: var(--primary-light);
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out, padding 0.3s ease;
-            padding: 0 30px;
-            color: var(--text-muted);
-            font-size: 14px;
-            font-weight: 300;
-            line-height: 1.6;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 220px; /* Suficiente para todo o conteúdo sem cortar */
-            padding-bottom: 24px;
-        }
-
-        /* ==========================================================================
-           9. FOOTER E BOTAO DE WHATSAPP FIXO COM BATIMENTOS
-           ========================================================================== */
-        footer {
-            background-color: #050506;
-            border-top: 1px solid rgba(158, 0, 24, 0.15);
-            padding: 80px 0 40px 0;
-            position: relative;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr;
-            gap: 60px;
-            margin-bottom: 60px;
-        }
-
-        .footer-about {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .footer-logo-img {
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            filter: invert(1) brightness(1.2) contrast(1.1);
-            border: 1px solid var(--primary);
-        }
-
-        .footer-desc {
-            font-size: 13px;
-            color: var(--text-muted);
-            max-width: 340px;
-            font-weight: 300;
-        }
-
-        .footer-socials {
-            display: flex;
-            gap: 16px;
-        }
-
-        .social-link {
-            width: 40px;
-            height: 40px;
-            border: 1px solid var(--border-color);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 16px;
-            color: var(--text-muted);
-        }
-
-        .social-link:hover {
-            color: var(--primary-light);
-            border-color: var(--primary-light);
-            box-shadow: 0 0 10px var(--primary-glow);
-            transform: translateY(-3px);
-        }
-
-        .footer-links-title {
-            font-family: var(--font-sub);
-            font-size: 14px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 24px;
-            color: var(--text-main);
-        }
-
-        .footer-links-list {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .footer-item-link {
-            font-size: 13px;
-            color: var(--text-muted);
-            width: fit-content;
-        }
-
-        .footer-item-link:hover {
-            color: var(--text-main);
-            padding-left: 5px;
-        }
-
-        .footer-contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            font-size: 13px;
-            color: var(--text-muted);
-        }
-
-        .footer-contact-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .footer-contact-item i {
-            color: var(--primary-light);
-            font-size: 14px;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.02);
-            padding-top: 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 12px;
-            color: var(--text-muted);
-        }
-
-        .copyright span {
-            font-family: var(--font-sub);
-            color: var(--text-main);
-            font-weight: 700;
-        }
-
-        /* Botão Fixo do WhatsApp */
-        .whatsapp-fixed-wrapper {
-            position: fixed;
-            bottom: 40px;
-            right: 40px;
-            z-index: 999;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            pointer-events: none;
-        }
-
-        /* Notificação de balão que surge com atraso */
-        .whatsapp-bubble {
-            background: #1c1c1e;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            color: var(--text-main);
-            padding: 12px 20px;
-            font-size: 12px;
-            font-weight: 500;
-            border-radius: 4px;
-            margin-bottom: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            pointer-events: auto;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            max-width: 250px;
-        }
-
-        .whatsapp-bubble.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .whatsapp-bubble-close {
-            color: var(--text-muted);
-            background: none;
-            border: none;
-            font-size: 10px;
-            padding: 4px;
-        }
-
-        .whatsapp-bubble-close:hover {
-            color: var(--text-main);
-        }
-
-        .whatsapp-avatar {
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            object-fit: cover;
-            filter: invert(1) brightness(1.2);
-            border: 1px solid var(--primary);
-        }
-
-        .whatsapp-bubble-text {
-            font-size: 11px;
-            line-height: 1.4;
-        }
-
-        .whatsapp-bubble-text strong {
-            color: var(--primary-light);
-            display: block;
-        }
-
-        .whatsapp-btn {
-            background: #25d366; /* Cor oficial do WhatsApp */
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 30px;
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
-            pointer-events: auto;
-            position: relative;
-            transition: var(--transition);
-        }
-
-        /* Efeito pulsação cardíaca no botão do WhatsApp */
-        .whatsapp-btn::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: #25d366;
-            z-index: -1;
-            top: 0;
-            left: 0;
-            animation: heartbeat-ring 2.5s infinite;
-        }
-
-        .whatsapp-btn:hover {
-            transform: scale(1.1) rotate(8deg);
-            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.6);
-        }
-
-        /* ==========================================================================
-           10. PRINCIPAIS ANIMAÇÕES CSS
-           ========================================================================== */
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        @keyframes pulse-glow {
-            0% { opacity: 0.4; transform: scale(0.95); }
-            100% { opacity: 0.85; transform: scale(1.05); }
-        }
-
-        @keyframes heartbeat {
-            0% { transform: scale(1); }
-            20% { transform: scale(1.15); }
-            40% { transform: scale(1); }
-            60% { transform: scale(1.15); }
-            80% { transform: scale(1); }
-            100% { transform: scale(1); }
-        }
-
-        @keyframes heartbeat-ring {
-            0% { transform: scale(1); opacity: 0.75; }
-            50% { opacity: 0; transform: scale(1.6); }
-            100% { opacity: 0; transform: scale(1.6); }
-        }
-
-        /* ==========================================================================
-           11. RESPONSIVIDADE COMPLETA E OTIMIZADA PARA MOBILE
-           ========================================================================== */
-        
-        /* Ajuste responsivo de paddings nas seções para telas menores (Melhor UX mobile) */
-        @media (max-width: 768px) {
-            .concept, .services, .catalog, .testimonials, .faq {
-                padding: 80px 0;
-            }
-            .hero-gothic-cross {
-                display: none; /* Evita quebra de largura/overflow do texto gigante */
-            }
-        }
-
-        @media (max-width: 480px) {
-            .concept, .services, .catalog, .testimonials, .faq {
-                padding: 60px 0;
-            }
-        }
-
-        @media (max-width: 992px) {
-            .section-title {
-                font-size: 32px;
-            }
-
-            .hero {
-                padding-top: 140px;
-                padding-bottom: 60px;
-                min-height: auto;
-            }
-
-            .hero .container {
-                grid-template-columns: 1fr;
-                gap: 50px;
-                text-align: center;
-            }
-
-            .hero-content {
-                align-items: center;
-            }
-
-            .hero-title {
-                font-size: 54px;
-            }
-
-            .hero-title span {
-                font-size: 60px;
-            }
-
-            .hero-buttons {
-                justify-content: center;
-            }
-
-            .hero-rose-wrapper {
-                width: 320px;
-                height: 320px;
-                margin: 0 auto;
-            }
-
-            .hero-rose-halo {
-                width: 260px;
-                height: 260px;
-            }
-
-            .hero-rose-img {
-                width: 220px;
-                height: 220px;
-            }
-
-            .concept-grid {
-                grid-template-columns: 1fr;
-                gap: 60px;
-            }
-
-            .concept-visual {
-                height: 400px;
-                order: -1; /* Joga a colagem visual de atitude para cima antes do texto */
-            }
-
-            .visual-card {
-                width: 240px;
-                height: 320px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            header .nav-container {
-                height: 70px;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .nav-menu {
-                position: fixed;
-                top: 70px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 70px);
-                background: rgba(7, 7, 8, 0.98);
-                backdrop-filter: blur(20px);
-                -webkit-backdrop-filter: blur(20px);
-                flex-direction: column;
-                justify-content: center;
-                gap: 40px;
-                transition: var(--transition);
-                border-top: 1px solid rgba(255, 255, 255, 0.05);
-            }
-
-            .nav-menu.active {
-                left: 0;
-            }
-
-            .nav-link {
-                font-size: 16px;
-            }
-
-            .btn-header {
-                display: none;
-            }
-
-            .hero-title {
-                font-size: 42px;
-            }
-
-            .hero-title span {
-                font-size: 46px;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .btn-primary, .btn-secondary {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .concept-highlights {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                gap: 20px;
-                text-align: center;
-            }
-
-            .whatsapp-fixed-wrapper {
-                bottom: 24px;
-                right: 24px;
-            }
-        }
-
-        /* Otimizações críticas para telas pequenas (ex: iPhone SE e similares de 320px-375px) */
-        @media (max-width: 480px) {
-            .hero-title {
-                font-size: 34px;
-            }
-
-            .hero-title span {
-                font-size: 38px;
-            }
-
-            .hero-rose-wrapper {
-                width: 270px;
-                height: 270px;
-            }
-
-            .hero-rose-halo {
-                width: 220px;
-                height: 220px;
-            }
-
-            .hero-rose-img {
-                width: 180px;
-                height: 180px;
-            }
-
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .product-img-wrapper {
-                height: 290px; /* Redução para encaixar melhor em proporção mobile */
-            }
-
-            .whatsapp-btn {
-                width: 50px;
-                height: 50px;
-                font-size: 24px;
-            }
-
-            .whatsapp-bubble {
-                max-width: 210px;
-                padding: 10px 14px;
-                font-size: 11px;
-                margin-bottom: 8px;
-            }
-
-            .brand-name {
-                font-size: 20px;
-                letter-spacing: 2px;
-            }
-
-            .brand-logo-img {
-                width: 36px;
-                height: 36px;
-            }
-
-            .faq-question {
-                padding: 20px;
-                font-size: 14px;
-            }
-
-            .faq-answer {
-                padding: 0 20px;
-            }
-
-            .faq-item.active .faq-answer {
-                padding-bottom: 20px;
-                max-height: 280px; /* Garante espaço extra para quebra de linhas */
-            }
-        }
-    </style>
+    <!-- Arquivo de Estilo Externo -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- ==========================================================================
-       HEADER E BARRA DE NAVEGAÇÃO
+       PÁGINA PRINCIPAL (LANDING PAGE COMPLETA)
        ========================================================================== -->
-    <header id="header">
-        <div class="container nav-container">
-            <a href="#home" class="brand-logo">
-                <img src="LogoKardiá.jpeg" alt="Rosa Logo Kardiá" class="brand-logo-img">
-                <span class="brand-name">KARDIÁ</span>
-            </a>
+    <div id="landing-page" class="page-state">
+        
+        <!-- Header da Loja -->
+        <header id="header">
+            <div class="container nav-container">
+                <a href="#" class="brand-logo">
+                    <img src="logo.png" alt="Rosa Logo Kardiá" class="brand-logo-img">
+                    <span class="brand-name">KARDIÁ</span>
+                </a>
 
-            <!-- Menu de navegação -->
-            <nav class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link">Início</a>
-                <a href="#conceito" class="nav-link">O Conceito</a>
-                <a href="#servicos" class="nav-link">Serviços</a>
-                <a href="#catalogo" class="nav-link">Catálogo</a>
-                <a href="#depoimentos" class="nav-link">Vozes</a>
-                <a href="#faq" class="nav-link">FAQ</a>
-            </nav>
+                <nav class="nav-menu" id="nav-menu">
+                    <a href="#home" class="nav-link">Início</a>
+                    <a href="#conceito" class="nav-link">O Conceito</a>
+                    <a href="#servicos" class="nav-link">Serviços</a>
+                    <a href="#catalogo" class="nav-link">Catálogo</a>
+                    <a href="#depoimentos" class="nav-link">Vozes</a>
+                    <a href="#faq" class="nav-link">FAQ</a>
+                </nav>
 
-            <button class="btn-header" onclick="contatoGeralWhatsApp('Orçamento Geral')">
-                Iniciar Curadoria <i class="fa-solid fa-cross-hairs" style="margin-left: 6px;"></i>
-            </button>
+                <button class="btn-header" onclick="contatoGeralWhatsApp()">
+                    Iniciar Curadoria <i class="fa-solid fa-cross-hairs" style="margin-left: 6px;"></i>
+                </button>
 
-            <button class="mobile-menu-btn" id="mobile-toggle" aria-label="Abrir Menu de Navegação">
-                <i class="fa-solid fa-bars-staggered"></i>
-            </button>
-        </div>
-    </header>
-
-    <!-- ==========================================================================
-       HERO SECTION (APRESENTAÇÃO E PARALLAX DA ROSA)
-       ========================================================================== -->
-    <section class="hero" id="home">
-        <div class="hero-gothic-cross">K</div>
-        <div class="container">
-            
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <i class="fa-solid fa-heart-pulse"></i> Sourcing de Luxo & Streetwear
-                </div>
-                <h1 class="hero-title">
-                    A PULSAÇÃO DO
-                    <span>UNDERGROUND</span>
-                </h1>
-                <p class="hero-description">
-                    Importação direta de vestuário de luxo internacional. Inspirado na estética punk-gótica e no drill das ruas globais, conectamos você ao que há de mais exclusivo no cenário mundial.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#catalogo" class="btn-primary">
-                        Explorar Peças <i class="fa-solid fa-angle-right"></i>
-                    </a>
-                    <a href="#servicos" class="btn-secondary">
-                        Nossos Serviços <i class="fa-solid fa-info-circle"></i>
-                    </a>
-                </div>
+                <button class="mobile-menu-btn" id="mobile-toggle" aria-label="Abrir Menu de Navegação">
+                    <i class="fa-solid fa-bars-staggered"></i>
+                </button>
             </div>
+        </header>
 
-            <!-- Lado direito: O coração visual (Rosa flutuante e animada) -->
-            <div class="hero-image-side">
-                <div class="hero-rose-wrapper">
-                    <div class="hero-rose-glow"></div>
-                    <div class="hero-rose-halo"></div>
-                    <img src="LogoKardiá.jpeg" alt="Rosa Tridimensional Kardiá" id="hero-rose" class="hero-rose-img">
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ==========================================================================
-       CONCEITO (FILOSOFIA DA MARCA)
-       ========================================================================== -->
-    <section class="concept" id="conceito">
-        <div class="container">
-            <div class="concept-grid">
-                
-                <div class="concept-text">
-                    <div style="display: flex; flex-direction: column; align-items: flex-start;">
-                        <span class="concept-tagline" style="text-transform: uppercase;">Kardiá: O Coração das Ruas</span>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-gothic-cross">K</div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="fa-solid fa-heart-pulse"></i> Sourcing de Luxo & Streetwear
                     </div>
-                    <h2 class="section-title" style="text-align: left; font-size: 32px;">A Essência das ruas e o Espírito Rebelde</h2>
-                    <p class="concept-description">
-                        Em grego clássico, <strong>Kardiá (καρδιά)</strong> significa coração. Para nós, não é apenas um órgão, é o motor da rebeldia urbana. Nos inspiramos nas linhas góticas ornamentadas e estilos únicos das ruas para fundar um conceito de importação focado na excelência bruta e no mistério.
+                    <h1 class="hero-title">
+                        O CORAÇÃO DO
+                        <span>UNDERGROUND</span>
+                    </h1>
+                    <p class="hero-description">
+                        Importação direta de vestuário de luxo internacional. Inspirado na estética das ruas globais, conectamos você ao que há de mais exclusivo no cenário mundial.
                     </p>
-                    <p class="concept-description">
-                        Não somos uma importadora de grandes estoques. Somos garimpeiros. Trazemos o exclusivo, o raro e peças de 1 linha que define sua identidade no meio da multidão.
-                    </p>
+                    <div class="hero-buttons">
+                        <a href="#catalogo" class="btn-primary">
+                            Explorar Peças <i class="fa-solid fa-angle-right"></i>
+                        </a>
+                        <a href="#servicos" class="btn-secondary">
+                            Nossos Serviços <i class="fa-solid fa-info-circle"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-image-side">
+                    <div class="hero-rose-wrapper">
+                        <div class="hero-rose-glow"></div>
+                        <div class="hero-rose-halo"></div>
+                        <img src="logo.png" alt="Rosa Tridimensional Kardiá" id="hero-rose" class="hero-rose-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Conceito -->
+        <section class="concept" id="conceito">
+            <div class="container">
+                <div class="concept-grid">
+                    <div class="concept-text">
+                        <div>
+                            <span class="concept-tagline" style="text-transform: uppercase;">Kardiá: O Coração das Ruas</span>
+                        </div>
+                        <h2 class="section-title" style="text-align: left; font-size: clamp(1.5rem, 3.5vw, 2rem);">A Essência Grega e o Espírito Rebelde</h2>
+                        <p class="concept-description">
+                            Em grego clássico, <strong>Kardiá (καρδιά)</strong> significa coração. Para nós, não é apenas um órgão, é o motor da rebeldia urbana. Nos inspiramos nas estéticas das ruas para fundar um conceito de importação focado na excelência bruta e no mistério.
+                        </p>
+                        <p class="concept-description">
+                            Não somos uma importadora de grandes estoques. Somos garimpeiros. Trazemos o exclusivo, o raro, a peça que define sua identidade no meio da multidão.
+                        </p>
+                        
+                        <div class="concept-highlights">
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fa-solid fa-cross"></i>
+                                </div>
+                                <h3 class="highlight-title">Facilidade na importação</h3>
+                                <p class="highlight-desc">Nossa equipe especializada facilita todo o processo de importação para você.</p>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fa-solid fa-truck-ramp-box"></i>
+                                </div>
+                                <h3 class="highlight-title">Envio Blindado</h3>
+                                <p class="highlight-desc">Logística avançada livre de taxações alfandegárias inesperadas para o Brasil.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="concept-visual">
+                        <div class="visual-card visual-card-1"></div>
+                        <div class="visual-card visual-card-2"></div>
+                        <div class="visual-badge">EST. 2026</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Serviços -->
+        <section class="services" id="servicos">
+            <div class="container">
+                <div class="section-title-wrapper">
+                    <span class="section-subtitle">O Que Fazemos</span>
+                    <h2 class="section-title">Nossas Soluções</h2>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                        <h3 class="service-title">Sourcing Exclusivo</h3>
+                        <p class="service-desc">
+                            Encontramos itens únicos em drops globais. Nossa rede global adquire e envia a peça para você.
+                        </p>
+                        <div class="service-price-wrapper">
+                            <span class="price-label">Taxa de Curadoria</span>
+                            <span class="price-value">Sob Consulta</span>
+                        </div>
+                        <button class="service-cta" onclick="contatoServicoWhatsApp('Sourcing Exclusivo')">Consultar Serviço</button>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-plane-departure"></i></div>
+                        <h3 class="service-title">Importação Direta</h3>
+                        <p class="service-desc">
+                            Adquira peças de lojas internacionais e deixe toda a burocracia de transporte aéreo, desembaraço na alfândega e frete final por nossa conta.
+                        </p>
+                        <div class="service-price-wrapper">
+                            <span class="price-label">Taxa de Operação</span>
+                            <span class="price-value">Sob Consulta</span>
+                        </div>
+                        <button class="service-cta" onclick="contatoServicoWhatsApp('Importação Direta')">Consultar Serviço</button>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+                        <h3 class="service-title">Drops Coletivos (B2B)</h3>
+                        <p class="service-desc">
+                            Focado em lojistas e revendedores independentes. Consolidamos compras de lote para fornecer margens altamente lucrativas em peças de streetwear.
+                        </p>
+                        <div class="service-price-wrapper">
+                            <span class="price-label">Lotes e Frete</span>
+                            <span class="price-value">Sob Consulta</span>
+                        </div>
+                        <button class="service-cta" onclick="contatoServicoWhatsApp('Drops Coletivos B2B')">Consultar Serviço</button>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                        <h3 class="service-title">Redirecionamento</h3>
+                        <p class="service-desc">
+                            Fornecemos endereços físicos seguros nos EUA, Europa e Ásia para você fazer suas compras. Recebemos, consolidamos e enviamos tudo em segurança ao Brasil.
+                        </p>
+                        <div class="service-price-wrapper">
+                            <span class="price-label">Taxa de Box</span>
+                            <span class="price-value">Sob Consulta</span>
+                        </div>
+                        <button class="service-cta" onclick="contatoServicoWhatsApp('Redirecionamento de Encomendas')">Consultar Serviço</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Catálogo -->
+        <section class="catalog" id="catalogo">
+            <div class="container">
+                <div class="section-title-wrapper">
+                    <span class="section-subtitle">Curadoria Kardiá</span>
+                    <h2 class="section-title">Peças Disponíveis para Encomenda</h2>
+                </div>
+
+                <div class="catalog-filters">
+                    <button class="filter-btn active" data-category="all">Todos</button>
+                    <button class="filter-btn" data-category="moletons">Moletons</button>
+                    <button class="filter-btn" data-category="camisetas">Camisetas</button>
+                    <button class="filter-btn" data-category="calcas">Calças</button>
+                    <button class="filter-btn" data-category="jaquetas">Jaquetas</button>
+                    <button class="filter-btn" data-category="acessorios">Acessórios</button>
+                </div>
+
+                <div class="products-grid" id="products-container">
                     
-                    <div class="concept-highlights">
-                        <div class="highlight-item">
-                            <div class="highlight-icon">
-                                <i class="fa-solid fa-cross"></i>
+                    <!-- Produto 1 -->
+                    <a href="#produto-sacred-heart" class="product-card" data-category="moletons">
+                        <div class="product-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=800&q=80" alt="Moletom Heavyweight Gothic Kardiá" class="product-img">
+                            <div class="product-badge rare">Raro / Limited</div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Moletom Heavyweight "Sacred Heart"</h3>
+                            <p class="product-desc">Algodão 600GSM ultra-pesado com modelagem boxy. Estampa gótica em silkscreen relevo e bordados prateados.</p>
+                            <div class="product-price-row">
+                                <span class="product-price-label">Preço</span>
+                                <span class="product-price-value">Sob Consulta <i class="fa-solid fa-heart"></i></span>
                             </div>
-                            <h3 class="highlight-title">Curadoria de Sangue</h3>
-                            <p class="highlight-desc">Cada peça é escolhida a dedo, autenticada e trazida para você com a mesma paixão e precisão de um coração pulsando forte.</p>
+                            <button class="product-cta-btn">Ver Detalhes <i class="fa-solid fa-cross-hairs"></i></button>
                         </div>
-                        <div class="highlight-item">
-                            <div class="highlight-icon">
-                                <i class="fa-solid fa-truck-ramp-box"></i>
+                    </a>
+
+                    <!-- Produto 2 -->
+                    <a href="#produto-drill-obsidian" class="product-card" data-category="calcas">
+                        <div class="product-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=800&q=80" alt="Calça Cargo Drill Obsidian Kardiá" class="product-img">
+                            <div class="product-badge">Tactical</div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Calça Cargo Modular "Drill Obsidian"</h3>
+                            <p class="product-desc">Sarja impermeabilizada de alta densidade. Bolsos cargo tridimensionais e tiras utilitárias ajustáveis.</p>
+                            <div class="product-price-row">
+                                <span class="product-price-label">Preço</span>
+                                <span class="product-price-value">Sob Consulta <i class="fa-solid fa-heart"></i></span>
                             </div>
-                            <h3 class="highlight-title">Envio Blindado</h3>
-                            <p class="highlight-desc">Logística avançada livre de taxações alfandegárias inesperadas para o Brasil.</p>
+                            <button class="product-cta-btn">Ver Detalhes <i class="fa-solid fa-cross-hairs"></i></button>
+                        </div>
+                    </a>
+
+                    <!-- Produto 3 -->
+                    <a href="#produto-gothic-rose" class="product-card" data-category="camisetas">
+                        <div class="product-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80" alt="Camiseta Washed Vintage Gothic Rose Kardiá" class="product-img">
+                            <div class="product-badge">Vintage Wash</div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Camiseta Washed "Gothic Rose"</h3>
+                            <p class="product-desc">Algodão de 260GSM com tratamento de lavagem estonada cinza-carvão. Modelagem mock neck de gola alta 3cm.</p>
+                            <div class="product-price-row">
+                                <span class="product-price-label">Preço</span>
+                                <span class="product-price-value">Sob Consulta <i class="fa-solid fa-heart"></i></span>
+                            </div>
+                            <button class="product-cta-btn">Ver Detalhes <i class="fa-solid fa-cross-hairs"></i></button>
+                        </div>
+                    </a>
+
+                    <!-- Produto 4 -->
+                    <a href="#produto-silver-bullet" class="product-card" data-category="jaquetas">
+                        <div class="product-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1544923246-77307dd654cb?auto=format&fit=crop&w=800&q=80" alt="Jaqueta Puffer Silver Bullet Kardiá" class="product-img">
+                            <div class="product-badge rare">Refletiva 3M</div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Jaqueta Puffer "Kardiá Silver Bullet"</h3>
+                            <p class="product-desc">Gomos largos em nylon ripstop prateado refletivo 3M. Preenchimento de alto isolamento e capuz ajustável.</p>
+                            <div class="product-price-row">
+                                <span class="product-price-label">Preço</span>
+                                <span class="product-price-value">Sob Consulta <i class="fa-solid fa-heart"></i></span>
+                            </div>
+                            <button class="product-cta-btn">Ver Detalhes <i class="fa-solid fa-cross-hairs"></i></button>
+                        </div>
+                    </a>
+
+                    <!-- Produto 5 -->
+                    <a href="#produto-eclipse" class="product-card" data-category="acessorios">
+                        <div class="product-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&q=80" alt="Óculos Trap Shield Eclipse Kardiá" class="product-img">
+                            <div class="product-badge">Premium</div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Óculos Trap Shield "Eclipse"</h3>
+                            <p class="product-desc">Armação robusta em acetato preto-piano de altíssima resistência com detalhes de adornos de cruzes góticas.</p>
+                            <div class="product-price-row">
+                                <span class="product-price-label">Preço</span>
+                                <span class="product-price-value">Sob Consulta <i class="fa-solid fa-heart"></i></span>
+                            </div>
+                            <button class="product-cta-btn">Ver Detalhes <i class="fa-solid fa-cross-hairs"></i></button>
+                        </div>
+                    </a>
+
+                    <!-- Produto 6 -->
+                    <a href="#produto-sterling-chain" class="product-card" data-category="acessorios">
+                        <div class="product-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80" alt="Colar Gothic Chain Kardiá" class="product-img">
+                            <div class="product-badge rare">Prata 925</div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Corrente Gothic Chain "Kardiá"</h3>
+                            <p class="product-desc">Elos grumet duplos em aço inoxidável cirúrgico com pingente de rosa e cruz dupla-face moldado à mão.</p>
+                            <div class="product-price-row">
+                                <span class="product-price-label">Preço</span>
+                                <span class="product-price-value">Sob Consulta <i class="fa-solid fa-heart"></i></span>
+                            </div>
+                            <button class="product-cta-btn">Ver Detalhes <i class="fa-solid fa-cross-hairs"></i></button>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Depoimentos -->
+        <section class="testimonials" id="depoimentos">
+            <div class="container">
+                <div class="section-title-wrapper">
+                    <span class="section-subtitle">Feedback real</span>
+                    <h2 class="section-title">Vozes das Ruas</h2>
+                </div>
+
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fa-solid fa-heart"></i><i class="fa-solid fa-heart"></i><i class="fa-solid fa-heart"></i><i class="fa-solid fa-heart"></i><i class="fa-solid fa-heart"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Fazer curadoria com a Kardiá foi insano. Eu estava procurando um anel específico da Chrome Hearts que não achava em site nenhum. Eles encontraram, validaram a peça na gringa e mandaram com total segurança. Brabo demais!"
+                        </p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Avatar Pedro Kadosh" class="user-avatar">
+                            <div class="user-info">
+                                <span class="user-name">Pedro "Kadosh"</span>
+                                <span class="user-role">Colecionador & MC</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fa-solid fa-heart"></i><i class="fa-solid fa-heart"></i><i class="fa-solid fa-heart"></i><i class="fa-solid fa-heart"></i><i class="fa-solid fa-heart"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "O redirecionamento deles funciona liso. Comprei roupas de marcas de drill de Londres pelo site gringo, mandei pro galpão deles e eles reenviaram pra mim. Zero dores de cabeça com taxas na alfândega."
+                        </p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80" alt="Avatar Mariana Luz" class="user-avatar">
+                            <div class="user-info">
+                                <span class="user-name">Mariana Luz</span>
+                                <span class="user-role">Stylist & Designer</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fa-solid fa-heart"></i><i class="fa-solid fa-heart"></i><i class="fa-solid fa-heart"></i><i class="fa-solid fa-heart"></i><i class="fa-solid fa-heart"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Estava meio inseguro de importar peças raras por causa de golpes, mas a transparência da Kardiá é absurda. Mandaram vídeo verificando a originalidade do moletom e o frete chegou muito antes do previsto. Kardiá tem meu respeito."
+                        </p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80" alt="Avatar Thiago Silveira" class="user-avatar">
+                            <div class="user-info">
+                                <span class="user-name">Thiago Silveira</span>
+                                <span class="user-role">Streetwear Enthusiast</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção FAQ -->
+        <section class="faq" id="faq">
+            <div class="container">
+                <div class="section-title-wrapper">
+                    <span class="section-subtitle">Dúvidas Frequentes</span>
+                    <h2 class="section-title">Decodificando Processos</h2>
+                </div>
+
+                <div class="faq-wrapper">
+                    <div class="faq-item">
+                        <button class="faq-question">Como funciona a curadoria (Sourcing)? <i class="fa-solid fa-chevron-down faq-icon"></i></button>
+                        <div class="faq-answer">
+                            <p>Você nos envia referências, links ou apenas o nome do modelo e tamanho do item streetwear de luxo que procura. Nós ativamos nossos contatos no exterior para encontrar o produto. Enviamos fotos do produto e, após sua validação, finalizamos a importação direta para o Brasil.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">Vocês trabalham com estoque? <i class="fa-solid fa-chevron-down faq-icon"></i></button>
+                        <div class="faq-answer">
+                            <p>Abrimos recentemente e estocar produtos é arriscado para nós, porém pretendemos expandir nossa oferta de forma estratégica no futuro e se Deus quiser, estocaremos produtos e assim facilitando a entrega do protudo para todo o Brasil.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">Qual o prazo médio de entrega para o Brasil? <i class="fa-solid fa-chevron-down faq-icon"></i></button>
+                        <div class="faq-answer">
+                            <p>O prazo padrão de transporte aéreo internacional varia entre 30 a 40 dias úteis, contados a partir da data de postagem no nosso galpão de consolidação internacional (EUA/Europa/Ásia) até a sua porta.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">Correrei risco de taxação extra na alfândega? <i class="fa-solid fa-chevron-down faq-icon"></i></button>
+                        <div class="faq-answer">
+                            <p>Não. Na nossa modalidade de curadoria e sourcing, o valor acordado na negociação inicial é 100% final e sem surpresas. O produto chega liberado e desembaraçado na sua casa.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">Como faço para iniciar meu orçamento? <i class="fa-solid fa-chevron-down faq-icon"></i></button>
+                        <div class="faq-answer">
+                            <p>Basta clicar no botão flutuante de WhatsApp fixo. Nosso canal direto no aplicativo (11) 96333-9981 conecta você imediatamente a um de nossos curadores de estilo, pronto para cotar sua importação ou dê uma olhada nos catálogos que disponibilizamos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-about">
+                        <div class="footer-logo">
+                            <img src="logo.png" alt="Logo Kardiá Footer" class="footer-logo-img">
+                            <span class="brand-name">KARDIÁ</span>
+                        </div>
+                        <p class="footer-desc">O coração do streetwear. Importação dedicada do underground global diretamente para as ruas do Brasil.</p>
+                        <div class="footer-socials">
+                            <a href="https://instagram.com" target="_blank" class="social-link" aria-label="Instagram Kardiá"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://pinterest.com" target="_blank" class="social-link" aria-label="Pinterest Kardiá"><i class="fa-brands fa-pinterest-p"></i></a>
+                            <a href="https://tiktok.com" target="_blank" class="social-link" aria-label="TikTok Kardiá"><i class="fa-brands fa-tiktok"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-links">
+                        <h3 class="footer-links-title">Navegação</h3>
+                        <ul class="footer-links-list">
+                            <li><a href="#home" class="footer-item-link">Início</a></li>
+                            <li><a href="#conceito" class="footer-item-link">O Conceito</a></li>
+                            <li><a href="#servicos" class="footer-item-link">Serviços</a></li>
+                            <li><a href="#catalogo" class="footer-item-link">Catálogo</a></li>
+                            <li><a href="#depoimentos" class="footer-item-link">Vozes da Rua</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-contact">
+                        <h3 class="footer-links-title">Contato Oficial</h3>
+                        <div class="footer-contact-info">
+                            <div class="footer-contact-item">
+                                <i class="fa-brands fa-whatsapp"></i>
+                                <span>(11) 96333-9981</span>
+                            </div>
+                            <div class="footer-contact-item">
+                                <i class="fa-solid fa-envelope"></i>
+                                <span>sourcing@kardia.store</span>
+                            </div>
+                            <div class="footer-contact-item">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>São Paulo | Envio para todo o BR</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Lado direito: Estética colagem de atitude -->
-                <div class="concept-visual">
-                    <div class="visual-card visual-card-1"></div>
-                    <div class="visual-card visual-card-2"></div>
-                    <div class="visual-badge">EST. 2026</div>
+                <div class="footer-bottom">
+                    <p class="copyright">© 2026 <span>Kardiá Store</span>. Todos os direitos reservados.</p>
+                    <p class="footer-bottom-cnpj">Importadora Oficial Kardiá | CNPJ sob consulta.</p>
                 </div>
-
             </div>
-        </div>
-    </section>
+        </footer>
+    </div>
 
     <!-- ==========================================================================
-       SEÇÃO DE SERVIÇOS (PREÇOS SOB CONSULTA / EXCLUSIVO)
+       PÁGINA DEDICADA DO PRODUTO (SPA VIEW - GERADO DINAMICAMENTE PELO JS)
        ========================================================================== -->
-    <section class="services" id="servicos">
-        <div class="container">
-            
-            <div class="section-title-wrapper">
-                <span class="section-subtitle">O Que Fazemos</span>
-                <h2 class="section-title">Nossas Soluções</h2>
-            </div>
-
-            <div class="services-grid">
-                
-                <!-- Card Serviço 1 -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </div>
-                    <h3 class="service-title">Sourcing Exclusivo</h3>
-                    <p class="service-desc">
-                        Encontramos itens raros e esgotados em drops globais, importamos itens de 1 linha para facilitar o processo de importalções, como hubbuy, cssbuy, entre outras.
-                    </p>
-                    <div class="service-price-wrapper">
-                        <span class="price-label">Taxa de Curadoria</span>
-                        <span class="price-value">Sob Consulta</span>
-                    </div>
-                    <button class="service-cta" onclick="contatoServicoWhatsApp('Sourcing Exclusivo')">Consultar Serviço</button>
-                </div>
-
-                <!-- Card Serviço 2 -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fa-solid fa-plane-departure"></i>
-                    </div>
-                    <h3 class="service-title">Importação Direta</h3>
-                    <p class="service-desc">
-                        Adquira peças de lojas internacionais e deixe toda a burocracia de transporte aéreo, desembaraço na alfândega e frete final por nossa conta.
-                    </p>
-                    <div class="service-price-wrapper">
-                        <span class="price-label">Taxa de Operação</span>
-                        <span class="price-value">Sob Consulta</span>
-                    </div>
-                    <button class="service-cta" onclick="contatoServicoWhatsApp('Importação Direta')">Consultar Serviço</button>
-                </div>
-
-                <!-- Card Serviço 3 -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fa-solid fa-boxes-stacked"></i>
-                    </div>
-                    <h3 class="service-title">Drops Coletivos (B2B)</h3>
-                    <p class="service-desc">
-                        Focado em lojistas e revendedores independentes. Consolidamos compras de lote para fornecer margens altamente lucrativas em peças de streetwear.
-                    </p>
-                    <div class="service-price-wrapper">
-                        <span class="price-label">Lotes e Frete</span>
-                        <span class="price-value">Sob Consulta</span>
-                    </div>
-                    <button class="service-cta" onclick="contatoServicoWhatsApp('Drops Coletivos B2B')">Consultar Serviço</button>
-                </div>
-
-                <!-- Card Serviço 4 -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fa-solid fa-map-location-dot"></i>
-                    </div>
-                    <h3 class="service-title">Redirecionamento</h3>
-                    <p class="service-desc">
-                        Recebemos, consolidamos e enviamos tudo em segurança para todo o Brasil.
-                    </p>
-                    <div class="service-price-wrapper">
-                        <span class="price-label">Taxa de Box</span>
-                        <span class="price-value">Sob Consulta</span>
-                    </div>
-                    <button class="service-cta" onclick="contatoServicoWhatsApp('Redirecionamento de Encomendas')">Consultar Serviço</button>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
+    <div id="product-page" class="page-state hidden"></div>
 
     <!-- ==========================================================================
-       CATÁLOGO DE PRODUTOS (INTERATIVO - SEM PREÇOS)
-       ========================================================================== -->
-    <section class="catalog" id="catalogo">
-        <div class="container">
-            
-            <div class="section-title-wrapper">
-                <span class="section-subtitle">Curadoria Kardiá</span>
-                <h2 class="section-title">Peças Disponíveis para Encomenda</h2>
-            </div>
-
-            <!-- Filtros Interativos por Categoria -->
-            <div class="catalog-filters">
-                <button class="filter-btn active" data-category="all">Todos</button>
-                <button class="filter-btn" data-category="moletons">Moletons</button>
-                <button class="filter-btn" data-category="camisetas">Camisetas</button>
-                <button class="filter-btn" data-category="calcas">Calças</button>
-                <button class="filter-btn" data-category="jaquetas">Jaquetas</button>
-                <button class="filter-btn" data-category="acessorios">Acessórios</button>
-            </div>
-
-            <!-- Grid de Produtos -->
-            <div class="products-grid" id="products-container">
-                
-                <!-- Produto 1: Moletom -->
-                <div class="product-card" data-category="moletons">
-                    <div class="product-img-wrapper">
-                        <!-- NOTA PARA O USUÁRIO: Para trocar a imagem deste produto, altere o link no atributo 'src' abaixo -->
-                        <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=800&q=80" alt="Moletom Heavyweight Gothic Kardiá" class="product-img">
-                        <div class="product-badge rare">Raro / Limited</div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Moletom Heavyweight "Sacred Heart"</h3>
-                        <p class="product-desc">
-                            Algodão 600GSM ultra-pesado com modelagem boxy/oversized. Estampa gótica em silkscreen de alto relevo nas costas e bordados nos punhos.
-                        </p>
-                        <div class="product-price-row">
-                            <span class="product-price-label">Preço</span>
-                            <!-- NOTA PARA O USUÁRIO: Altere o valor abaixo se quiser colocar preços -->
-                            <span class="product-price-value">Sob Consulta <i class="fa-solid fa-heart"></i></span>
-                        </div>
-                        <button class="product-cta-btn" onclick="contatoProdutoWhatsApp('Moletom Heavyweight Sacred Heart')">
-                            Consultar Peça <i class="fa-brands fa-whatsapp"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Produto 2: Calça -->
-                <div class="product-card" data-category="calcas">
-                    <div class="product-img-wrapper">
-                        <!-- NOTA PARA O USUÁRIO: Insira a foto de sua calça cargo no 'src' abaixo -->
-                        <img src="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=800&q=80" alt="Calça Cargo Drill Obsidian Kardiá" class="product-img">
-                        <div class="product-badge">Tactical</div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Calça Cargo Modular "Drill Obsidian"</h3>
-                        <p class="product-desc">
-                            Sarja impermeabilizada de alta densidade. Bolsos cargo tridimensionais, tiras utilitárias ajustáveis e detalhes metálicos cromados.
-                        </p>
-                        <div class="product-price-row">
-                            <span class="product-price-label">Preço</span>
-                            <span class="product-price-value">Sob Consulta <i class="fa-solid fa-heart"></i></span>
-                        </div>
-                        <button class="product-cta-btn" onclick="contatoProdutoWhatsApp('Calça Cargo Modular Drill Obsidian')">
-                            Consultar Peça <i class="fa-brands fa-whatsapp"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Produto 3: Camiseta -->
-                <div class="product-card" data-category="camisetas">
-                    <div class="product-img-wrapper">
-                        <!-- NOTA PARA O USUÁRIO: Insira a foto de sua camiseta gótica no 'src' abaixo -->
-                        <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80" alt="Camiseta Washed Vintage Gothic Rose Kardiá" class="product-img">
-                        <div class="product-badge">Vintage Wash</div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Camiseta Washed "Gothic Rose"</h3>
-                        <p class="product-desc">
-                            Algodão de 260GSM com tratamento de lavagem estonada cinza-carvão. Modelagem mock neck de gola alta 3cm com estampa de rosa clássica.
-                        </p>
-                        <div class="product-price-row">
-                            <span class="product-price-label">Preço</span>
-                            <span class="product-price-value">Sob Consulta <i class="fa-solid fa-heart"></i></span>
-                        </div>
-                        <button class="product-cta-btn" onclick="contatoProdutoWhatsApp('Camiseta Washed Gothic Rose')">
-                            Consultar Peça <i class="fa-brands fa-whatsapp"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Produto 4: Jaqueta -->
-                <div class="product-card" data-category="jaquetas">
-                    <div class="product-img-wrapper">
-                        <!-- NOTA PARA O USUÁRIO: Insira a foto de sua jaqueta puffer no 'src' abaixo -->
-                        <img src="https://images.unsplash.com/photo-1544923246-77307dd654cb?auto=format&fit=crop&w=800&q=80" alt="Jaqueta Puffer Silver Bullet Kardiá" class="product-img">
-                        <div class="product-badge rare">Refletiva 3M</div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Jaqueta Puffer "Kardiá Silver Bullet"</h3>
-                        <p class="product-desc">
-                            Gomos largos preenchidos com plumas térmicas em nylon ripstop prateado refletivo sob flash. Ajustes na gola e capuz removível.
-                        </p>
-                        <div class="product-price-row">
-                            <span class="product-price-label">Preço</span>
-                            <span class="product-price-value">Sob Consulta <i class="fa-solid fa-heart"></i></span>
-                        </div>
-                        <button class="product-cta-btn" onclick="contatoProdutoWhatsApp('Jaqueta Puffer Silver Bullet')">
-                            Consultar Peça <i class="fa-brands fa-whatsapp"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Produto 5: Óculos (Acessório) -->
-                <div class="product-card" data-category="acessorios">
-                    <div class="product-img-wrapper">
-                        <!-- NOTA PARA O USUÁRIO: Insira a foto de seus óculos no 'src' abaixo -->
-                        <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&q=80" alt="Óculos Trap Shield Eclipse Kardiá" class="product-img">
-                        <div class="product-badge">Premium</div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Óculos Trap Shield "Eclipse"</h3>
-                        <p class="product-desc">
-                            Armação em acetato preto-piano de altíssima resistência com detalhe de adorno de cruzes esculpidas em metal nas duas hastes.
-                        </p>
-                        <div class="product-price-row">
-                            <span class="product-price-label">Preço</span>
-                            <span class="product-price-value">Sob Consulta <i class="fa-solid fa-heart"></i></span>
-                        </div>
-                        <button class="product-cta-btn" onclick="contatoProdutoWhatsApp('Óculos Trap Shield Eclipse')">
-                            Consultar Peça <i class="fa-brands fa-whatsapp"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Produto 6: Corrente (Acessório) -->
-                <div class="product-card" data-category="acessorios">
-                    <div class="product-img-wrapper">
-                        <!-- NOTA PARA O USUÁRIO: Insira a foto de sua joia no 'src' abaixo -->
-                        <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80" alt="Colar Gothic Chain Kardiá" class="product-img">
-                        <div class="product-badge rare">Prata 925</div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Corrente Gothic Chain "Kardiá"</h3>
-                        <p class="product-desc">
-                            Elos grumet duplos em aço inoxidável cirúrgico polido com pingente esculpido à mão contendo as insígnias da rosa grega Kardiá.
-                        </p>
-                        <div class="product-price-row">
-                            <span class="product-price-label">Preço</span>
-                            <span class="product-price-value">Sob Consulta <i class="fa-solid fa-heart"></i></span>
-                        </div>
-                        <button class="product-cta-btn" onclick="contatoProdutoWhatsApp('Corrente Gothic Chain Kardiá')">
-                            Consultar Peça <i class="fa-brands fa-whatsapp"></i>
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ==========================================================================
-       DEPOIMENTOS DE CLIENTES (VOZES DAS RUAS)
-       ========================================================================== -->
-    <section class="testimonials" id="depoimentos">
-        <div class="container">
-            
-            <div class="section-title-wrapper">
-                <span class="section-subtitle">Feedback real</span>
-                <h2 class="section-title">Vozes das Ruas</h2>
-            </div>
-
-            <div class="testimonials-grid">
-                
-                <!-- Depoimento 1 -->
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        <i class="fa-solid fa-heart"></i>
-                        <i class="fa-solid fa-heart"></i>
-                        <i class="fa-solid fa-heart"></i>
-                        <i class="fa-solid fa-heart"></i>
-                        <i class="fa-solid fa-heart"></i>
-                    </div>
-                    <p class="testimonial-text">
-                        "Fazer curadoria com a Kardiá foi insano. Eu estava procurando um anel específico da Chrome Hearts que não achava em site nenhum. Eles encontraram, validaram a peça na gringa e mandaram com total segurança. Brabo demais!"
-                    </p>
-                    <div class="testimonial-user">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Avatar Pedro Kadosh" class="user-avatar">
-                        <div class="user-info">
-                            <span class="user-name">Pedro "Kadosh"</span>
-                            <span class="user-role">Colecionador & MC</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Depoimento 2 -->
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        <i class="fa-solid fa-heart"></i>
-                        <i class="fa-solid fa-heart"></i>
-                        <i class="fa-solid fa-heart"></i>
-                        <i class="fa-solid fa-heart"></i>
-                        <i class="fa-solid fa-heart"></i>
-                    </div>
-                    <p class="testimonial-text">
-                        "O redirecionamento deles funciona liso. Comprei roupas de marcas de drill de Londres pelo site gringo, mandei pro galpão deles e eles reenviaram pra mim. Zero dores de cabeça com taxas na alfândega."
-                    </p>
-                    <div class="testimonial-user">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80" alt="Avatar Mariana Luz" class="user-avatar">
-                        <div class="user-info">
-                            <span class="user-name">Mariana Luz</span>
-                            <span class="user-role">Stylist & Designer</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Depoimento 3 -->
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        <i class="fa-solid fa-heart"></i>
-                        <i class="fa-solid fa-heart"></i>
-                        <i class="fa-solid fa-heart"></i>
-                        <i class="fa-solid fa-heart"></i>
-                        <i class="fa-solid fa-heart"></i>
-                    </div>
-                    <p class="testimonial-text">
-                        "Estava meio inseguro de importar peças raras por causa de golpes, mas a transparência da Kardiá é absurda. Mandaram vídeo verificando a originalidade do moletom e o frete chegou muito antes do previsto. Kardiá tem meu respeito."
-                    </p>
-                    <div class="testimonial-user">
-                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80" alt="Avatar Thiago Silveira" class="user-avatar">
-                        <div class="user-info">
-                            <span class="user-name">Thiago Silveira</span>
-                            <span class="user-role">Streetwear Enthusiast</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ==========================================================================
-       FAQ INTERATIVO (ACORDEON)
-       ========================================================================== -->
-    <section class="faq" id="faq">
-        <div class="container">
-            
-            <div class="section-title-wrapper">
-                <span class="section-subtitle">Dúvidas Frequentes</span>
-                <h2 class="section-title">Decodificando Processos</h2>
-            </div>
-
-            <div class="faq-wrapper">
-                
-                <!-- FAQ Item 1 -->
-                <div class="faq-item">
-                    <button class="faq-question">
-                        Como funciona a curadoria (Sourcing)? <i class="fa-solid fa-chevron-down faq-icon"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Você nos envia referências, links ou apenas o nome do modelo e tamanho do item streetwear de luxo que procura. Nós ativamos nossos contatos no exterior para encontrar o produto. Enviamos fotos do produto e, após sua validação, finalizamos a importação direta para o Brasil.</p>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 2 -->
-                <div class="faq-item">
-                    <button class="faq-question">
-                        Como funciona o estoque? <i class="fa-solid fa-chevron-down faq-icon"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Todo item que importamos, fica armazenado em nosso estoque no Brasil até que seja solicitado. Isso garante que você tenha acesso mais rápido às peças, te livrando qualquer problema que possa dar, como perda do produto, taxas altas ou qualquer outra coisa.</p>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 3 -->
-                <div class="faq-item">
-                    <button class="faq-question">
-                        Qual o prazo médio de entrega para o Brasil? <i class="fa-solid fa-chevron-down faq-icon"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>O prazo padrão de transporte aéreo internacional varia entre 20 a 40 dias úteis, contados a partir da data de postagem no nosso galpão de consolidação internacional (EUA/Europa/Ásia) até a sua porta.</p>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 4 -->
-                <div class="faq-item">
-                    <button class="faq-question">
-                        Correrei risco de taxação extra na alfândega? <i class="fa-solid fa-chevron-down faq-icon"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Não. Na nossa modalidade de curadoria e sourcing, o valor acordado na negociação inicial é 100% final e sem surpresas. O produto chega liberado e desembaraçado na sua casa.</p>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 5 -->
-                <div class="faq-item">
-                    <button class="faq-question">
-                        Como faço para iniciar meu orçamento? <i class="fa-solid fa-chevron-down faq-icon"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Basta clicar em "Consultar Peça" ou utilizar o botão flutuante de WhatsApp fixo. Nosso canal direto no aplicativo (11) 96333-9981 conecta você imediatamente a um de nossos curadores de estilo, pronto para cotar sua importação.</p>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ==========================================================================
-       FOOTER
-       ========================================================================== -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                
-                <div class="footer-about">
-                    <div class="footer-logo">
-                        <img src="LogoKardiá.jpeg" alt="Logo Kardiá Footer" class="footer-logo-img">
-                        <span class="brand-name">KARDIÁ</span>
-                    </div>
-                    <p class="footer-desc">
-                        O coração gótico do streetwear. Importação dedicada do underground global diretamente para as ruas do Brasil.
-                    </p>
-                    <div class="footer-socials">
-                        <a href="https://instagram.com" target="_blank" class="social-link" aria-label="Instagram Kardiá"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://pinterest.com" target="_blank" class="social-link" aria-label="Pinterest Kardiá"><i class="fa-brands fa-pinterest-p"></i></a>
-                        <a href="https://tiktok.com" target="_blank" class="social-link" aria-label="TikTok Kardiá"><i class="fa-brands fa-tiktok"></i></a>
-                    </div>
-                </div>
-
-                <div class="footer-links">
-                    <h3 class="footer-links-title">Navegação</h3>
-                    <ul class="footer-links-list">
-                        <li><a href="#home" class="footer-item-link">Início</a></li>
-                        <li><a href="#conceito" class="footer-item-link">O Conceito</a></li>
-                        <li><a href="#servicos" class="footer-item-link">Serviços</a></li>
-                        <li><a href="#catalogo" class="footer-item-link">Catálogo</a></li>
-                        <li><a href="#depoimentos" class="footer-item-link">Vozes da Rua</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-contact">
-                    <h3 class="footer-links-title">Contato Oficial</h3>
-                    <div class="footer-contact-info">
-                        <div class="footer-contact-item">
-                            <i class="fa-brands fa-whatsapp"></i>
-                            <span>(11) 96333-9981</span>
-                        </div>
-                        <div class="footer-contact-item">
-                            <i class="fa-solid fa-envelope"></i>
-                            <span>sourcing@kardia.store</span>
-                        </div>
-                        <div class="footer-contact-item">
-                            <i class="fa-solid fa-location-dot"></i>
-                            <span>São Paulo | Envio para todo o BR</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="footer-bottom">
-                <p class="copyright">
-                    © 2026 <span>Kardiá Store</span>. Todos os direitos reservados.
-                </p>
-                <p style="font-size: 11px; opacity: 0.5;">
-                    Importadora Oficial Kardiá | CNPJ sob consulta.
-                </p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- ==========================================================================
-       WHATSAPP FIXO COM POP-UP E ANIMAÇÃO DE PULSAÇÃO
+       WHATSAPP FIXO FLUTUANTE
        ========================================================================== -->
     <div class="whatsapp-fixed-wrapper">
-        <!-- Notificação de balão que surge com atraso (simula atendente chamando) -->
         <div class="whatsapp-bubble" id="wa-bubble">
-            <img src="LogoKardiá.jpeg" alt="Curador Kardiá" class="whatsapp-avatar">
+            <img src="logo.png" alt="Curador Kardiá" class="whatsapp-avatar">
             <div class="whatsapp-bubble-text">
                 <strong>Curadoria Kardiá</strong>
                 Salve! Procurando alguma peça exclusiva ou tirando dúvidas? Chama!
@@ -2284,178 +507,12 @@
             </button>
         </div>
         
-        <!-- Botão principal que abre o WhatsApp diretamente -->
         <a href="https://wa.me/5511963339981" target="_blank" class="whatsapp-btn" id="whatsapp-trigger" aria-label="Fale Conosco no WhatsApp">
             <i class="fa-brands fa-whatsapp"></i>
         </a>
     </div>
 
-    <!-- ==========================================================================
-       12. JAVASCRIPT MODERNO (ANIMAÇÕES E LOGICA DOS FILTROS)
-       ========================================================================== -->
-    <script>
-        // Configurações do WhatsApp
-        const WHATSAPP_NUM = "5511963339981";
-
-        // 1. Mensagens de Redirecionamento Automático
-        function contatoProdutoWhatsApp(nomeProduto) {
-            const mensagem = `Salve! Vi a peça "${nomeProduto}" no catálogo do site da Kardiá e gostaria de consultar a disponibilidade e valores. Como funciona a importação dela?`;
-            const url = `https://wa.me/${WHATSAPP_NUM}?text=${encodeURIComponent(mensagem)}`;
-            window.open(url, '_blank');
-        }
-
-        function contatoServicoWhatsApp(nomeServico) {
-            const mensagem = `Salve! Tenho interesse no serviço de "${nomeServico}" da Kardiá. Gostaria de entender melhor como funciona e solicitar um orçamento personalizado.`;
-            const url = `https://wa.me/${WHATSAPP_NUM}?text=${encodeURIComponent(mensagem)}`;
-            window.open(url, '_blank');
-        }
-
-        function contatoGeralWhatsApp(contexto) {
-            const mensagem = `Salve! Entrei no site de importação da Kardiá e gostaria de iniciar uma curadoria de roupas exclusivas.`;
-            const url = `https://wa.me/${WHATSAPP_NUM}?text=${encodeURIComponent(mensagem)}`;
-            window.open(url, '_blank');
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            
-            // 2. Menu Mobile Responsivo com Bloqueio de Scroll
-            const mobileToggle = document.getElementById('mobile-toggle');
-            const navMenu = document.getElementById('nav-menu');
-
-            if (mobileToggle && navMenu) {
-                mobileToggle.addEventListener('click', () => {
-                    navMenu.classList.toggle('active');
-                    document.body.classList.toggle('menu-active');
-                    
-                    const icon = mobileToggle.querySelector('i');
-                    if (navMenu.classList.contains('active')) {
-                        icon.className = 'fa-solid fa-xmark';
-                    } else {
-                        icon.className = 'fa-solid fa-bars-staggered';
-                    }
-                });
-
-                // Fecha o menu ao clicar em qualquer link
-                document.querySelectorAll('.nav-link').forEach(link => {
-                    link.addEventListener('click', () => {
-                        navMenu.classList.remove('active');
-                        document.body.classList.remove('menu-active');
-                        mobileToggle.querySelector('i').className = 'fa-solid fa-bars-staggered';
-                    });
-                });
-            }
-
-            // 3. Efeito de Scroll no Header
-            const header = document.getElementById('header');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-            });
-
-            // 4. PARALLAX DA ROSA (Otimizado para Touch / Scroll)
-            const rose = document.getElementById('hero-rose');
-            const roseWrapper = document.querySelector('.hero-rose-wrapper');
-
-            // Scroll Parallax (Seguro em Mobile e Desktop)
-            window.addEventListener('scroll', () => {
-                const scrolled = window.pageYOffset;
-                if (rose) {
-                    // Mantém rotação e escala perfeitamente fluidas
-                    rose.style.transform = `rotate(${scrolled * 0.1}deg) translateY(${scrolled * 0.08}px) scale(${1 - (scrolled * 0.0003)})`;
-                }
-            });
-
-            // Mouse Interactive 3D Tilt - APENAS para Computadores (Desktop) com Hover suportado
-            // Evita pulos e problemas em telas touch
-            if (window.matchMedia('(hover: hover)').matches) {
-                if (roseWrapper && rose) {
-                    roseWrapper.addEventListener('mousemove', (e) => {
-                        const rect = roseWrapper.getBoundingClientRect();
-                        const x = e.clientX - rect.left - rect.width / 2;
-                        const y = e.clientY - rect.top - rect.height / 2;
-                        
-                        const tiltX = (y / (rect.height / 2)) * -12;
-                        const tiltY = (x / (rect.width / 2)) * 12;
-                        
-                        const scrolled = window.pageYOffset;
-                        rose.style.transform = `rotate(${scrolled * 0.1}deg) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(1.04)`;
-                        rose.style.boxShadow = `${-tiltY * 1.5}px ${tiltX * 1.5}px 30px rgba(158, 0, 24, 0.45)`;
-                    });
-
-                    roseWrapper.addEventListener('mouseleave', () => {
-                        const scrolled = window.pageYOffset;
-                        rose.style.transform = `rotate(${scrolled * 0.1}deg) rotateX(0deg) rotateY(0deg) scale(1)`;
-                        rose.style.boxShadow = `0 0 50px rgba(0,0,0,0.9)`;
-                    });
-                }
-            }
-
-            // 5. FILTROS DINÂMICOS DO CATÁLOGO
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const productCards = document.querySelectorAll('.product-card');
-
-            filterButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
-
-                    const category = button.getAttribute('data-category');
-
-                    productCards.forEach(card => {
-                        const cardCategory = card.getAttribute('data-category');
-                        
-                        if (category === 'all' || cardCategory === category) {
-                            card.style.display = 'flex';
-                            card.style.opacity = '0';
-                            setTimeout(() => {
-                                card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-                                card.style.opacity = '1';
-                            }, 50);
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
-                });
-            });
-
-            // 6. ACORDEON FAQ INTERATIVO
-            const faqItems = document.querySelectorAll('.faq-item');
-
-            faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
-                
-                question.addEventListener('click', () => {
-                    const isActive = item.classList.contains('active');
-                    faqItems.forEach(faq => faq.classList.remove('active'));
-                    
-                    if (!isActive) {
-                        item.classList.add('active');
-                    }
-                });
-            });
-
-            // 7. BALÃO DE ATENÇÃO DO WHATSAPP (Apenas pós 3 segundos)
-            const waBubble = document.getElementById('wa-bubble');
-            const waBubbleClose = document.getElementById('wa-bubble-close');
-
-            setTimeout(() => {
-                if (waBubble) {
-                    waBubble.classList.add('show');
-                }
-            }, 3000);
-
-            if (waBubbleClose && waBubble) {
-                waBubbleClose.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    waBubble.classList.remove('show');
-                });
-            }
-
-        });
-    </script>
+    <!-- Lógica JavaScript Externa -->
+    <script src="script.js"></script>
 </body>
 </html>
