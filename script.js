@@ -15,7 +15,7 @@ const PRODUCTS_DATABASE = {
         category: "moletons",
         badge: "Raro / Limited",
         price: null,
-        description: "Desenvolvido em algodão de ultra-densidade 600GSM (Heavyweight Cotton). Apresenta modelagem boxy com ombros caídos e caimento rígido premium. Estampa gótica em silkscreen de alto relevo nas costas, com detalhes ornamentados bordados em fio de prata esterlina nos punhos. Capuz forrado duplo e sem cordões para uma silhueta limpa e minimalista.",
+        description: "Desenvolvido em algodão de ultra-densidade 600GSM (Heavyweight Cotton). Apresenta modelagem boxy com ombros caídos e caimento rígido premium. Estampa exclusiva em silkscreen de alto relevo nas costas, com detalhes ornamentados bordados em fio de prata esterlina nos punhos. Capuz forrado duplo e sem cordões para uma silhueta limpa e minimalista.",
         images: [
             "https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=800&q=80",
             "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=800&q=80",
@@ -51,13 +51,13 @@ const PRODUCTS_DATABASE = {
         },
         care: "Lavar à mão ou em ciclo seco. Não utilizar alvejantes à base de cloro. Secar à sombra para preservar a resina protetora."
     },
-    "gothic-rose": {
-        id: "gothic-rose",
-        title: "Camiseta Washed \"Gothic Rose\"",
+    "vintage-rose": {
+        id: "vintage-rose",
+        title: "Camiseta Washed \"Vintage Rose\"",
         category: "camisetas",
         badge: "Vintage Wash",
         price: null,
-        description: "Produzida com algodão premium de 260GSM submetida a um processo intenso de lavagem estonada ácida (acid wash), conferindo uma textura cinza carvão estonada com visual vintage. Gola alta estruturada com 3cm de largura (Mock Neck) feita de ribana reforçada de elastano. Estampa frontal artística de rosa gótica estilizada feita em técnica de corrosão.",
+        description: "Produzida com algodão premium de 260GSM submetida a um processo intenso de lavagem estonada ácida (acid wash), conferindo uma textura cinza carvão estonada com visual vintage. Gola alta estruturada com 3cm de largura (Mock Neck) feita de ribana reforçada de elastano. Estampa frontal artística de rosa exclusiva estilizada feita em técnica de corrosão.",
         images: [
             "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80",
             "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=800&q=80",
@@ -97,9 +97,9 @@ const PRODUCTS_DATABASE = {
         id: "eclipse",
         title: "Óculos Trap Shield \"Eclipse\"",
         category: "acessorios",
-        badge: "Gothic Eyewear",
+        badge: "Shield Eyewear",
         price: null,
-        description: "Óculos com design shield esportivo/trap robusto. Armação moldada em acetato de celulose injetado preto-piano polido manualmente. Hastes largas com encaixes de cruzes e rosas góticas esculpidas em liga metálica prateada. Lentes em policarbonato escurecido total com proteção UV400 completa contra raios solares.",
+        description: "Óculos com design shield esportivo/trap robusto. Armação moldada em acetato de celulose injetado preto-piano polido manualmente. Hastes largas com encaixes de cruzes e rosas exclusivas esculpidas em liga metálica prateada. Lentes em policarbonato escurecido total com proteção UV400 completa contra raios solares.",
         images: [
             "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&q=80",
             "https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=800&q=80",
@@ -116,11 +116,11 @@ const PRODUCTS_DATABASE = {
     },
     "sterling-chain": {
         id: "sterling-chain",
-        title: "Corrente Gothic Chain \"Kardiá\"",
+        title: "Corrente Sterling Chain \"Kardiá\"",
         category: "acessorios",
         badge: "Joalheria Premium",
         price: null,
-        description: "Corrente estilo elo grumet achatado duplo feita em aço inoxidável cirúrgico 316L, livre de oxidação e hipoalergênico. Pingente circular maciço dupla face esculpido à mão contendo de um lado a rosa Kardiá em relevo com acabamento envelhecido escurecido e do outro a cruz maltesa gótica. Fecho gaveta personalizado com trava dupla de segurança.",
+        description: "Corrente estilo elo grumet achatado duplo feita em aço inoxidável cirúrgico 316L, livre de oxidação e hipoalergênico. Pingente circular maciço dupla face esculpido à mão contendo de um lado a rosa Kardiá em relevo com acabamento envelhecido escurecido e do outro a cruz maltesa esculpida. Fecho gaveta personalizado com trava dupla de segurança.",
         images: [
             "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80",
             "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=80",
@@ -314,13 +314,16 @@ function showProductPage(productId) {
                         <button class="detail-buy-btn" id="btn-buy-${product.id}" onclick="handleAddToCart('${product.id}')">
                             <i class="fa-solid fa-bag-shopping"></i> Adicionar ao Carrinho
                         </button>
-                        <a href="https://wa.me/${WHATSAPP_NUM}?text=${encodeURIComponent('Salve! Vi o \"' + product.title + '\" no site da Kardiá e gostaria de consultar a disponibilidade de importação. Como funciona o processo?')}" target="_blank" class="detail-whatsapp-btn">
+                        <button class="detail-checkout-btn" onclick="handleBuyNow('${product.id}')">
+                            <i class="fa-solid fa-bolt"></i> Comprar Agora
+                        </button>
+                        <a href="https://wa.me/${WHATSAPP_NUM}?text=${encodeURIComponent('Salve! Vi o "' + product.title + '" no site da Kardia e gostaria de consultar a disponibilidade de importacao. Como funciona o processo?')}" target="_blank" rel="noopener noreferrer" class="detail-whatsapp-btn">
                             <i class="fa-brands fa-whatsapp"></i> Consultar via WhatsApp
                         </a>
                     </div>
 
                     <div class="detail-safety-badges">
-                        <div class="safety-badge-item"><i class="fa-solid fa-shield-halved"></i><span>Autenticidade Garantida</span></div>
+                        <div class="safety-badge-item"><i class="fa-solid fa-shield-halved"></i><span>Procedência Verificada</span></div>
                         <div class="safety-badge-item"><i class="fa-solid fa-truck-fast"></i><span>Importação Blindada</span></div>
                     </div>
                 </div>
@@ -379,14 +382,31 @@ window.handleAddToCart = function(productId) {
     addToCart(productId, selectedProductSizeValue);
 };
 
-window.solicitarImportacaoWhatsApp = function(productId) {
-    const product = PRODUCTS_DATABASE[productId];
-    if (!product) return;
-    const sizeInfo = selectedProductSizeValue ? ` no tamanho ${selectedProductSizeValue}` : '';
-    const mensagem = `Salve! Vi o "${product.title}"${sizeInfo} no site da Kardiá e gostaria de consultar a disponibilidade de importação. Como funciona o processo?`;
-    const url = `https://wa.me/${WHATSAPP_NUM}?text=${encodeURIComponent(mensagem)}`;
-    window.open(url, '_blank');
+/* Comprar diretamente da página de detalhe — valida tamanho e vai ao carrinho */
+window.handleBuyNow = function(productId) {
+    if (!selectedProductSizeValue) {
+        const hint = document.getElementById('size-hint');
+        if (hint) { hint.textContent = '⚠ Selecione um tamanho para comprar!'; hint.style.color = '#ff1a3d'; }
+        document.querySelectorAll('.size-btn').forEach(btn => {
+            btn.style.borderColor = '#ff1a3d';
+            setTimeout(() => btn.style.borderColor = '', 1500);
+        });
+        return;
+    }
+    addToCart(productId, selectedProductSizeValue);
+    window.location.hash = '#carrinho';
 };
+
+/* Comprar rápido a partir do card do catálogo — tamanho padrão M */
+window.handleQuickBuy = function(event, productId) {
+    event.preventDefault();
+    event.stopPropagation();
+    addToCart(productId, 'M');
+    window.location.hash = '#carrinho';
+};
+
+/* Função removida — o botão de WhatsApp na página de produto agora
+   usa um <a href> nativo para evitar bloqueios de pop-up no celular. */
 
 // ==========================================================================
 // PÁGINA DO CARRINHO (SPA VIEW)
@@ -487,8 +507,8 @@ function renderCartPage() {
                             </a>
 
                             <div class="cart-secure-badges">
-                                <div class="cart-secure-item"><i class="fa-solid fa-lock"></i> Pedido Seguro</div>
-                                <div class="cart-secure-item"><i class="fa-solid fa-shield-halved"></i> 100% Autêntico</div>
+                                <div class="cart-secure-item"><i class="fa-solid fa-lock"></i> Compra Segura</div>
+                                <div class="cart-secure-item"><i class="fa-solid fa-shield-halved"></i> Qualidade Garantida</div>
                                 <div class="cart-secure-item"><i class="fa-solid fa-rotate-left"></i> Garantia Vitalícia</div>
                             </div>
                         </div>
@@ -514,26 +534,14 @@ function renderCartPage() {
 window.showLandingAndScroll = function(sectionId) {
     window.location.hash = '#' + sectionId;
 };
-
+/* Funções abaixo mantidas como reserva mas não chamadas diretamente —
+   todos os botões críticos de WhatsApp usam <a href> nativo. */
 window.iniciarCheckoutWhatsApp = function() {
     if (cart.length === 0) return;
     const itensList = cart.map(i => `• ${i.title} (Tam: ${i.size}, Qtd: ${i.qty})`).join('\n');
     const mensagem = `Salve! Gostaria de finalizar meu pedido na Kardiá:\n\n${itensList}\n\nPode me passar os valores e detalhes do pagamento?`;
     const url = `https://wa.me/${WHATSAPP_NUM}?text=${encodeURIComponent(mensagem)}`;
     window.open(url, '_blank');
-};
-
-// ==========================================================================
-// WHATSAPP — LANDING PAGE
-// ==========================================================================
-window.contatoServicoWhatsApp = function(nomeServico) {
-    const mensagem = `Salve! Tenho interesse no serviço de "${nomeServico}" da Kardiá. Gostaria de entender melhor como funciona e solicitar um orçamento personalizado.`;
-    window.open(`https://wa.me/${WHATSAPP_NUM}?text=${encodeURIComponent(mensagem)}`, '_blank');
-};
-
-window.contatoGeralWhatsApp = function() {
-    const mensagem = `Salve! Entrei no site de importação da Kardiá e gostaria de iniciar uma curadoria de roupas exclusivas.`;
-    window.open(`https://wa.me/${WHATSAPP_NUM}?text=${encodeURIComponent(mensagem)}`, '_blank');
 };
 
 window.removeFromCart = removeFromCart;

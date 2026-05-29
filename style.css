@@ -1,5 +1,5 @@
 /* ==========================================================================
-   KARDIÁ STORE - STYLE SHEET (CHROME HEARTS & GOTHIC STREETWEAR)
+   KARDIÁ STORE - STYLE SHEET (STREETWEAR & IMPORTAÇÃO EXCLUSIVA)
    Unidades: rem, em, clamp(), %, vh/vw — sem pixels fixos
    ========================================================================== */
 
@@ -19,7 +19,7 @@
     --text-muted: #8e8e93;
     --border-color: rgba(209, 209, 214, 0.08);
     --border-glow: rgba(158, 0, 24, 0.15);
-    --font-gothic: 'Cinzel Decorative', serif;
+    --font-display: 'Cinzel Decorative', serif;
     --font-sub: 'Cinzel', serif;
     --font-body: 'Plus Jakarta Sans', sans-serif;
     --font-street: 'Syne', sans-serif;
@@ -57,7 +57,7 @@ body.menu-active {
     overflow: hidden;
 }
 
-/* Barra de rolagem gótica */
+/* Barra de rolagem personalizada */
 ::-webkit-scrollbar {
     width: 0.5rem;
 }
@@ -119,7 +119,7 @@ ul {
 }
 
 .section-title {
-    font-family: var(--font-gothic);
+    font-family: var(--font-display);
     font-size: clamp(1.75rem, 4vw, 2.375rem);
     font-weight: 700;
     letter-spacing: 0.125rem;
@@ -240,7 +240,7 @@ header.scrolled .nav-container {
 }
 
 .brand-name {
-    font-family: var(--font-gothic);
+    font-family: var(--font-display);
     font-size: clamp(1.25rem, 2.5vw, 1.5rem);
     font-weight: 900;
     letter-spacing: 0.1875rem;
@@ -352,11 +352,11 @@ header.scrolled .nav-container {
     background: radial-gradient(circle at 50% 50%, rgba(158, 0, 24, 0.08) 0%, transparent 60%);
 }
 
-.hero-gothic-cross {
+.hero-display-decor {
     position: absolute;
     font-size: 45vh;
     color: rgba(255, 255, 255, 0.012);
-    font-family: var(--font-gothic);
+    font-family: var(--font-display);
     top: 50%;
     left: 5%;
     transform: translateY(-50%);
@@ -401,7 +401,7 @@ header.scrolled .nav-container {
 }
 
 .hero-title {
-    font-family: var(--font-gothic);
+    font-family: var(--font-display);
     font-size: clamp(2.25rem, 6vw, 4.5rem);
     line-height: 0.95;
     font-weight: 900;
@@ -696,7 +696,7 @@ header.scrolled .nav-container {
     right: 0;
     background: var(--primary);
     color: var(--text-main);
-    font-family: var(--font-gothic);
+    font-family: var(--font-display);
     font-size: 0.8125rem;
     font-weight: 700;
     padding: 0.75rem 1.5rem;
@@ -1001,31 +1001,66 @@ header.scrolled .nav-container {
     animation: pulse-glow 2s infinite alternate;
 }
 
+/* Ações do card de produto (grade 2 colunas) */
+.product-card-link {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    flex-grow: 1;
+}
+
+.product-card-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
 .product-cta-btn {
-    margin-top: 1.25rem;
-    width: 100%;
-    padding: 1rem;
+    padding: 0.9rem 0.5rem;
     background: transparent;
-    border: 1px solid var(--accent);
-    color: var(--text-main);
+    border: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.04);
+    color: var(--text-muted);
     font-family: var(--font-street);
-    font-size: 0.6875rem;
+    font-size: 0.625rem;
     font-weight: 800;
-    letter-spacing: 0.125rem;
+    letter-spacing: 0.1rem;
     text-transform: uppercase;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.625rem;
+    gap: 0.4rem;
     transition: var(--transition);
-    pointer-events: none;
+    cursor: pointer;
 }
 
-.product-card:hover .product-cta-btn {
-    background: var(--text-main);
-    color: var(--bg-deep);
-    border-color: var(--text-main);
-    box-shadow: 0 0.625rem 1.5625rem rgba(255, 255, 255, 0.1);
+.product-cta-btn:hover {
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text-main);
+}
+
+.product-buy-btn {
+    padding: 0.9rem 0.5rem;
+    background: var(--primary);
+    border: none;
+    color: var(--text-main);
+    font-family: var(--font-street);
+    font-size: 0.625rem;
+    font-weight: 800;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.product-buy-btn:hover {
+    background: var(--primary-light);
+    box-shadow: 0 0 0.75rem var(--primary-glow);
 }
 
 /* ==========================================================================
@@ -1156,7 +1191,7 @@ header.scrolled .nav-container {
 }
 
 .detail-title {
-    font-family: var(--font-gothic);
+    font-family: var(--font-display);
     font-size: clamp(1.625rem, 4vw, 2.375rem);
     font-weight: 700;
     letter-spacing: 0.09375rem;
@@ -1266,6 +1301,76 @@ header.scrolled .nav-container {
     line-height: 1.6;
     font-weight: 300;
     font-style: italic;
+}
+
+/* Dica de tamanho */
+.size-hint {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+    font-style: italic;
+    transition: color 0.3s ease;
+}
+
+/* Área de botões de ação do produto */
+.detail-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+.detail-buy-btn {
+    width: 100%;
+    padding: 1.125rem;
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--text-main);
+    font-family: var(--font-street);
+    font-size: 0.8125rem;
+    font-weight: 800;
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.detail-buy-btn:hover {
+    border-color: var(--text-main);
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-0.125rem);
+}
+
+.detail-checkout-btn {
+    width: 100%;
+    padding: 1.125rem;
+    background: var(--primary);
+    border: 1px solid var(--primary);
+    color: var(--text-main);
+    font-family: var(--font-street);
+    font-size: 0.8125rem;
+    font-weight: 800;
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    box-shadow: 0 0.5rem 1.5rem var(--primary-glow);
+    transition: var(--transition);
+}
+
+.detail-checkout-btn:hover {
+    background: var(--primary-light);
+    border-color: var(--primary-light);
+    box-shadow: 0 0.75rem 2rem rgba(255, 26, 61, 0.45);
+    transform: translateY(-0.1875rem);
 }
 
 /* Botão WhatsApp */
@@ -1812,7 +1917,7 @@ footer {
 
 /* Smartphones Grandes e Tablets Pequenos (~768px) */
 @media (max-width: 48rem) {
-    .hero-gothic-cross {
+    .hero-display-decor {
         display: none;
     }
 
@@ -2202,7 +2307,7 @@ footer {
 }
 
 .cart-title {
-    font-family: var(--font-gothic);
+    font-family: var(--font-display);
     font-size: clamp(1.5rem, 3.5vw, 2.25rem);
     letter-spacing: 0.0625rem;
     display: flex;
@@ -2537,44 +2642,177 @@ footer {
     overflow: hidden;
 }
 
+/* ==========================================================================
+   HERO MOBILE — visível apenas em telas ≤ 48rem
+   A seção .hero (desktop) é ocultada nessa faixa.
+   ========================================================================== */
+.hero-mobile {
+    display: none; /* oculto em desktop */
+}
+
+/* Dentro de @media para mobile */
 @media (max-width: 48rem) {
-    .hero-title {
-        font-size: clamp(1.75rem, 8vw, 2.5rem);
+    /* Ocultar hero desktop; mostrar hero mobile */
+    .hero {
+        display: none !important;
     }
-    .hero-title span {
+
+    .hero-mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100dvh;
+        padding-top: clamp(5.5rem, 14vh, 7rem);
+        padding-bottom: clamp(2.5rem, 6vh, 4rem);
+        position: relative;
+        overflow: hidden;
+        background: radial-gradient(circle at 50% 40%, rgba(158, 0, 24, 0.1) 0%, transparent 65%);
+    }
+
+    .hero-mobile .container {
+        width: 100%;
+        padding: 0 1.25rem;
+    }
+
+    .hero-mobile-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.25rem;
+        width: 100%;
+    }
+
+    .hero-mobile-badge {
+        background: rgba(158, 0, 24, 0.15);
+        border: 1px solid rgba(158, 0, 24, 0.35);
+        color: var(--primary-light);
+        font-family: var(--font-street);
+        font-size: clamp(0.55rem, 2.5vw, 0.7rem);
+        font-weight: 800;
+        letter-spacing: 0.15rem;
+        text-transform: uppercase;
+        padding: 0.45rem 0.9rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+    }
+
+    .hero-mobile-badge i {
+        animation: heartbeat 1.5s infinite;
+    }
+
+    .hero-mobile-title {
+        font-family: var(--font-display);
+        font-size: clamp(1.7rem, 8vw, 2.5rem);
+        line-height: 1;
+        font-weight: 900;
+        letter-spacing: 0.05rem;
+        color: var(--text-main);
+        text-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.8);
+    }
+
+    .hero-mobile-title span {
+        font-family: var(--font-street);
         font-size: clamp(2rem, 10vw, 3.25rem);
-        letter-spacing: -0.0625rem;
+        display: block;
+        background: linear-gradient(90deg, var(--primary-light), var(--text-main), var(--accent));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 800;
+        letter-spacing: -0.05rem;
+        margin-top: 0.25rem;
     }
+
+    .hero-mobile-image-wrapper {
+        position: relative;
+        width: min(65vw, 14rem);
+        aspect-ratio: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0.5rem auto;
+    }
+
+    .hero-rose-glow-mobile {
+        position: absolute;
+        width: 80%;
+        height: 80%;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(158, 0, 24, 0.3) 0%, transparent 70%);
+        filter: blur(0.75rem);
+        animation: pulse-glow 4s ease-in-out infinite alternate;
+    }
+
+    .hero-rose-img-mobile {
+        width: 80%;
+        height: 80%;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 2px solid rgba(255, 255, 255, 0.06);
+        filter: invert(1) brightness(1.2) contrast(1.1) drop-shadow(0 0 1rem rgba(158, 0, 24, 0.6));
+        box-shadow: 0 0 2rem rgba(0, 0, 0, 0.9);
+        z-index: 5;
+        position: relative;
+    }
+
+    .hero-mobile-description {
+        font-size: clamp(0.8rem, 3.5vw, 0.9rem);
+        color: var(--text-muted);
+        max-width: 90%;
+        font-weight: 300;
+        line-height: 1.55;
+    }
+
+    .hero-mobile-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        width: 100%;
+        max-width: 22rem;
+        margin: 0 auto;
+    }
+
+    .hero-mobile-buttons .btn-primary,
+    .hero-mobile-buttons .btn-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Outros ajustes mobile */
     .header-actions {
         gap: 0.5rem;
     }
-}
 
-@media (max-width: 30rem) {
-    .hero-badge {
-        letter-spacing: 0.1rem;
-        padding: 0.4rem 0.8rem;
+    .product-card-actions {
+        grid-template-columns: 1fr 1fr;
     }
-    .hero-title {
-        font-size: 1.75rem;
-    }
-    .hero-title span {
-        font-size: 2.125rem;
-        letter-spacing: -0.03125rem;
-    }
+
     .cart-layout {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
+
     .cart-item {
         padding: 1rem;
-        gap: 1rem;
+        gap: 0.875rem;
     }
+
     .cart-item-img-wrapper {
         width: 5rem;
         height: 5rem;
     }
+
     .cart-item-title {
         font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 30rem) {
+    .hero-mobile-badge {
+        font-size: 0.55rem;
+        letter-spacing: 0.1rem;
+        padding: 0.35rem 0.7rem;
     }
 }
