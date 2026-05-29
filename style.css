@@ -2715,13 +2715,13 @@ footer {
 
     .hero-mobile-title span {
         font-family: var(--font-street);
-        font-size: clamp(1.8rem, 9vw, 3rem);
+        font-size: clamp(1.8rem, 8.5vw, 2.80rem);
         display: block;
         background: linear-gradient(90deg, var(--primary-light), var(--text-main), var(--accent));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         font-weight: 800;
-        letter-spacing: 0.02rem;
+        letter-spacing: 0.00rem;
         margin-top: 0.25rem;
     }
 
